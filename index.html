@@ -1,107 +1,1507 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curriculum Vitae - Hendra Kurniawan</title>
-    <link rel="stylesheet" href="css/style.css">
+  <title>Batam Mengaji - Bootstrap 5 Fashion Store HTML CSS Template</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="author" content="TemplatesJungle">
+  <meta name="keywords" content="ecommerce,fashion,store">
+  <meta name="description" content="Bootstrap 5 Fashion Store HTML CSS Template">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/vendor.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Marcellus&display=swap"
+    rel="stylesheet">
+
+    
 </head>
-<body>
+
+<body class="homepage">
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <defs>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="instagram" viewBox="0 0 15 15">
+        <path fill="none" stroke="currentColor"
+          d="M11 3.5h1M4.5.5h6a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4h-6a4 4 0 0 1-4-4v-6a4 4 0 0 1 4-4Zm3 10a3 3 0 1 1 0-6a3 3 0 0 1 0 6Z" />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="facebook" viewBox="0 0 15 15">
+        <path fill="none" stroke="currentColor"
+          d="M7.5 14.5a7 7 0 1 1 0-14a7 7 0 0 1 0 14Zm0 0v-8a2 2 0 0 1 2-2h.5m-5 4h5" />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="twitter" viewBox="0 0 15 15">
+        <path fill="currentColor"
+          d="m14.478 1.5l.5-.033a.5.5 0 0 0-.871-.301l.371.334Zm-.498 2.959a.5.5 0 1 0-1 0h1Zm-6.49.082h-.5h.5Zm0 .959h.5h-.5Zm-6.99 7V12a.5.5 0 0 0-.278.916L.5 12.5Zm.998-11l.469-.175a.5.5 0 0 0-.916-.048l.447.223Zm3.994 9l.354.353a.5.5 0 0 0-.195-.827l-.159.474Zm7.224-8.027l-.37.336l.18.199l.265-.04l-.075-.495Zm1.264-.94c.051.778.003 1.25-.123 1.606c-.122.345-.336.629-.723 1l.692.722c.438-.42.776-.832.974-1.388c.193-.546.232-1.178.177-2.006l-.998.066Zm0 3.654V4.46h-1v.728h1Zm-6.99-.646V5.5h1v-.959h-1Zm0 .959V6h1v-.5h-1ZM10.525 1a3.539 3.539 0 0 0-3.537 3.541h1A2.539 2.539 0 0 1 10.526 2V1Zm2.454 4.187C12.98 9.503 9.487 13 5.18 13v1c4.86 0 8.8-3.946 8.8-8.813h-1ZM1.03 1.675C1.574 3.127 3.614 6 7.49 6V5C4.174 5 2.421 2.54 1.966 1.325l-.937.35Zm.021-.398C.004 3.373-.157 5.407.604 7.139c.759 1.727 2.392 3.055 4.73 3.835l.317-.948c-2.155-.72-3.518-1.892-4.132-3.29c-.612-1.393-.523-3.11.427-5.013l-.895-.446Zm4.087 8.87C4.536 10.75 2.726 12 .5 12v1c2.566 0 4.617-1.416 5.346-2.147l-.708-.706Zm7.949-8.009A3.445 3.445 0 0 0 10.526 1v1c.721 0 1.37.311 1.82.809l.74-.671Zm-.296.83a3.513 3.513 0 0 0 2.06-1.134l-.744-.668a2.514 2.514 0 0 1-1.466.813l.15.989ZM.222 12.916C1.863 14.01 3.583 14 5.18 14v-1c-1.63 0-3.048-.011-4.402-.916l-.556.832Z" />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="pinterest" viewBox="0 0 15 15">
+        <path fill="none" stroke="currentColor"
+          d="m4.5 13.5l3-7m-3.236 3a2.989 2.989 0 0 1-.764-2V7A3.5 3.5 0 0 1 7 3.5h1A3.5 3.5 0 0 1 11.5 7v.5a3 3 0 0 1-3 3a2.081 2.081 0 0 1-1.974-1.423L6.5 9m1 5.5a7 7 0 1 1 0-14a7 7 0 0 1 0 14Z" />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="youtube" viewBox="0 0 15 15">
+        <path fill="currentColor"
+          d="m1.61 12.738l-.104.489l.105-.489Zm11.78 0l.104.489l-.105-.489Zm0-10.476l.104-.489l-.105.489Zm-11.78 0l.106.489l-.105-.489ZM6.5 5.5l.277-.416A.5.5 0 0 0 6 5.5h.5Zm0 4H6a.5.5 0 0 0 .777.416L6.5 9.5Zm3-2l.277.416a.5.5 0 0 0 0-.832L9.5 7.5ZM0 3.636v7.728h1V3.636H0Zm15 7.728V3.636h-1v7.728h1ZM1.506 13.227c3.951.847 8.037.847 11.988 0l-.21-.978a27.605 27.605 0 0 1-11.568 0l-.21.978ZM13.494 1.773a28.606 28.606 0 0 0-11.988 0l.21.978a27.607 27.607 0 0 1 11.568 0l.21-.978ZM15 3.636c0-.898-.628-1.675-1.506-1.863l-.21.978c.418.09.716.458.716.885h1Zm-1 7.728a.905.905 0 0 1-.716.885l.21.978A1.905 1.905 0 0 0 15 11.364h-1Zm-14 0c0 .898.628 1.675 1.506 1.863l.21-.978A.905.905 0 0 1 1 11.364H0Zm1-7.728c0-.427.298-.796.716-.885l-.21-.978A1.905 1.905 0 0 0 0 3.636h1ZM6 5.5v4h1v-4H6Zm.777 4.416l3-2l-.554-.832l-3 2l.554.832Zm3-2.832l-3-2l-.554.832l3 2l.554-.832Z" />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="dribble" viewBox="0 0 15 15">
+        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+          d="M4.839 1.024c3.346 4.041 5.096 7.922 5.704 12.782M.533 6.82c5.985-.138 9.402-1.083 11.97-4.216M2.7 12.594c3.221-4.902 7.171-5.65 11.755-4.293M14.5 7.5a7 7 0 1 0-14 0a7 7 0 0 0 14 0Z" />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="calendar" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          <rect width="20" height="18" x="2" y="4" rx="4" />
+          <path d="M8 2v4m8-4v4M2 10h20" />
+        </g>
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="shopping-bag" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          <path
+            d="M3.977 9.84A2 2 0 0 1 5.971 8h12.058a2 2 0 0 1 1.994 1.84l.803 10A2 2 0 0 1 18.833 22H5.167a2 2 0 0 1-1.993-2.16l.803-10Z" />
+          <path d="M16 11V6a4 4 0 0 0-4-4v0a4 4 0 0 0-4 4v5" />
+        </g>
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="gift" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          <rect width="18" height="14" x="3" y="8" rx="2" />
+          <path d="M12 5a3 3 0 1 0-3 3m6 0a3 3 0 1 0-3-3m0 0v17m9-7H3" />
+        </g>
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="arrow-cycle" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          <path
+            d="M22 12c0 6-4.39 10-9.806 10C7.792 22 4.24 19.665 3 16m-1-4C2 6 6.39 2 11.806 2C16.209 2 19.76 4.335 21 8" />
+          <path d="m7 17l-4-1l-1 4M17 7l4 1l1-4" />
+        </g>
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="link" viewBox="0 0 24 24">
+        <path fill="currentColor"
+          d="M12 19a1 1 0 1 0-1-1a1 1 0 0 0 1 1Zm5 0a1 1 0 1 0-1-1a1 1 0 0 0 1 1Zm0-4a1 1 0 1 0-1-1a1 1 0 0 0 1 1Zm-5 0a1 1 0 1 0-1-1a1 1 0 0 0 1 1Zm7-12h-1V2a1 1 0 0 0-2 0v1H8V2a1 1 0 0 0-2 0v1H5a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3Zm1 17a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-9h16Zm0-11H4V6a1 1 0 0 1 1-1h1v1a1 1 0 0 0 2 0V5h8v1a1 1 0 0 0 2 0V5h1a1 1 0 0 1 1 1ZM7 15a1 1 0 1 0-1-1a1 1 0 0 0 1 1Zm0 4a1 1 0 1 0-1-1a1 1 0 0 0 1 1Z" />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="arrow-left" viewBox="0 0 24 24">
+        <path fill="currentColor"
+          d="M17 11H9.41l3.3-3.29a1 1 0 1 0-1.42-1.42l-5 5a1 1 0 0 0-.21.33a1 1 0 0 0 0 .76a1 1 0 0 0 .21.33l5 5a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.42L9.41 13H17a1 1 0 0 0 0-2Z" />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="arrow-right" viewBox="0 0 24 24">
+        <path fill="currentColor"
+          d="M17.92 11.62a1 1 0 0 0-.21-.33l-5-5a1 1 0 0 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0l5-5a1 1 0 0 0 .21-.33a1 1 0 0 0 0-.76Z" />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="play" viewBox="0 0 24 24">
+        <g fill="none" fill-rule="evenodd">
+          <path
+            d="M24 0v24H0V0h24ZM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018Zm.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022Zm-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01l-.184-.092Z" />
+          <path fill="currentColor"
+            d="M5.669 4.76a1.469 1.469 0 0 1 2.04-1.177c1.062.454 3.442 1.533 6.462 3.276c3.021 1.744 5.146 3.267 6.069 3.958c.788.591.79 1.763.001 2.356c-.914.687-3.013 2.19-6.07 3.956c-3.06 1.766-5.412 2.832-6.464 3.28c-.906.387-1.92-.2-2.038-1.177c-.138-1.142-.396-3.735-.396-7.237c0-3.5.257-6.092.396-7.235Z" />
+        </g>
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="category" viewBox="0 0 24 24">
+        <path fill="currentColor"
+          d="M19 5.5h-6.28l-.32-1a3 3 0 0 0-2.84-2H5a3 3 0 0 0-3 3v13a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-10a3 3 0 0 0-3-3Zm1 13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-13a1 1 0 0 1 1-1h4.56a1 1 0 0 1 .95.68l.54 1.64a1 1 0 0 0 .95.68h7a1 1 0 0 1 1 1Z" />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="calendar" viewBox="0 0 24 24">
+        <path fill="currentColor"
+          d="M19 4h-2V3a1 1 0 0 0-2 0v1H9V3a1 1 0 0 0-2 0v1H5a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3Zm1 15a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-7h16Zm0-9H4V7a1 1 0 0 1 1-1h2v1a1 1 0 0 0 2 0V6h6v1a1 1 0 0 0 2 0V6h2a1 1 0 0 1 1 1Z" />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="heart" viewBox="0 0 24 24">
+        <path fill="currentColor"
+          d="M20.16 4.61A6.27 6.27 0 0 0 12 4a6.27 6.27 0 0 0-8.16 9.48l7.45 7.45a1 1 0 0 0 1.42 0l7.45-7.45a6.27 6.27 0 0 0 0-8.87Zm-1.41 7.46L12 18.81l-6.75-6.74a4.28 4.28 0 0 1 3-7.3a4.25 4.25 0 0 1 3 1.25a1 1 0 0 0 1.42 0a4.27 4.27 0 0 1 6 6.05Z" />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="plus" viewBox="0 0 24 24">
+        <path fill="currentColor"
+          d="M19 11h-6V5a1 1 0 0 0-2 0v6H5a1 1 0 0 0 0 2h6v6a1 1 0 0 0 2 0v-6h6a1 1 0 0 0 0-2Z" />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="minus" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M19 11H5a1 1 0 0 0 0 2h14a1 1 0 0 0 0-2Z" />
+      </symbol>
+      
+      <symbol xmlns="http://www.w3.org/2000/svg" id="check" viewBox="0 0 24 24">
+        <path fill="currentColor"
+          d="M18.71 7.21a1 1 0 0 0-1.42 0l-7.45 7.46l-3.13-3.14A1 1 0 1 0 5.29 13l3.84 3.84a1 1 0 0 0 1.42 0l8.16-8.16a1 1 0 0 0 0-1.47Z" />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="trash" viewBox="0 0 24 24">
+        <path fill="currentColor"
+          d="M10 18a1 1 0 0 0 1-1v-6a1 1 0 0 0-2 0v6a1 1 0 0 0 1 1ZM20 6h-4V5a3 3 0 0 0-3-3h-2a3 3 0 0 0-3 3v1H4a1 1 0 0 0 0 2h1v11a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8h1a1 1 0 0 0 0-2ZM10 5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v1h-4Zm7 14a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V8h10Zm-3-1a1 1 0 0 0 1-1v-6a1 1 0 0 0-2 0v6a1 1 0 0 0 1 1Z" />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="star-outline" viewBox="0 0 15 15">
+        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+          d="M7.5 9.804L5.337 11l.413-2.533L4 6.674l2.418-.37L7.5 4l1.082 2.304l2.418.37l-1.75 1.793L9.663 11L7.5 9.804Z" />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="star-solid" viewBox="0 0 15 15">
+        <path fill="currentColor"
+          d="M7.953 3.788a.5.5 0 0 0-.906 0L6.08 5.85l-2.154.33a.5.5 0 0 0-.283.843l1.574 1.613l-.373 2.284a.5.5 0 0 0 .736.518l1.92-1.063l1.921 1.063a.5.5 0 0 0 .736-.519l-.373-2.283l1.574-1.613a.5.5 0 0 0-.283-.844L8.921 5.85l-.968-2.062Z" />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="search" viewBox="0 0 24 24">
+        <path fill="currentColor"
+          d="M21.71 20.29L18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 7-7a7 7 0 0 1-7 7Z" />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="user" viewBox="0 0 24 24">
+        <path fill="currentColor"
+          d="M15.71 12.71a6 6 0 1 0-7.42 0a10 10 0 0 0-6.22 8.18a1 1 0 0 0 2 .22a8 8 0 0 1 15.9 0a1 1 0 0 0 1 .89h.11a1 1 0 0 0 .88-1.1a10 10 0 0 0-6.25-8.19ZM12 12a4 4 0 1 1 4-4a4 4 0 0 1-4 4Z" />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="close" viewBox="0 0 15 15">
+        <path fill="currentColor"
+          d="M7.953 3.788a.5.5 0 0 0-.906 0L6.08 5.85l-2.154.33a.5.5 0 0 0-.283.843l1.574 1.613l-.373 2.284a.5.5 0 0 0 .736.518l1.92-1.063l1.921 1.063a.5.5 0 0 0 .736-.519l-.373-2.283l1.574-1.613a.5.5 0 0 0-.283-.844L8.921 5.85l-.968-2.062Z" />
+      </symbol>
+    </defs>
+  </svg>
+
+  <div class="preloader text-white fs-6 text-uppercase overflow-hidden"></div>
+
+  <div class="search-popup">
+    <div class="search-popup-container">
+
+      <form role="search" method="get" class="form-group" action="">
+        <input type="search" id="search-form" class="form-control border-0 border-bottom"
+          placeholder="Type and press enter" value="" name="s" />
+        <button type="submit" class="search-submit border-0 position-absolute bg-white"
+          style="top: 15px;right: 15px;"><svg class="search" width="24" height="24">
+            <use xlink:href="#search"></use>
+          </svg></button>
+      </form>
+
+      
+
+      
+    </div>
+  </div>
+
+
+
+  <nav class="navbar navbar-expand-lg bg-light text-uppercase fs-6 p-3 border-bottom align-items-center">
+    <div class="container-fluid">
+      <div class="row justify-content-between align-items-center w-100">
+
+        <div class="col-auto">
+          <a class="navbar-brand text-white" href="index.html">
+            <img width="130" height="55" viewBox="0 0 130 55" src="images/logo.png">
+          </a>
+        </div>
+
+        <div class="col-auto">
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+            </div>
+
+            <li class="search-box" class="mx-2">
+              <a href="#search" class="search-button">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                  <use xlink:href="#search"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </nav>
+
+  <section id="billboard" class="bg-light py-5">
     <div class="container">
-        <!-- Header -->
-        <header>
-            <h1>Hendra Kurniawan</h1>
-            <p class="center-text">hendrakurniawann46@gmail.com | +6287840491199 | <a href="https://www.linkedin.com/in/hendra-kurniawan-6b3b7b152/">LinkedIn</a></p>
-        </header>
+      <div class="row justify-content-center">
+        <h1 class="section-title text-center mt-4" data-aos="fade-up">𝑺𝒑𝒓𝒆𝒂𝒅 𝒕𝒉𝒆 𝒍𝒊𝒈𝒉𝒕 𝒐𝒇 𝑸𝒖𝒓’𝒂𝒏 & 𝑨𝒔-𝑺𝒖𝒏𝒏𝒂𝒉.</h1>
+        <div class="col-md-6 text-center" data-aos="fade-up" data-aos-delay="300">
+          <p>Klik pada pilihan di bawah untuk menyaksikan siaran langsung kajian terbaru dari masjid sunnah di Batam.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="swiper main-swiper py-4" data-aos="fade-up" data-aos-delay="600">
+          <div class="swiper-wrapper d-flex border-animation-left">
+            <div class="swiper-slide">
+              <div class="banner-item image-zoom-effect">
+                <div class="image-holder">
+                  <a href="#">
+                    <img  src="images/masjid-darussakinah.jpg" alt="product" class="img-fluid">
+                  </a>
+                </div>
+                <div class="banner-content py-4">
+                  <h5 class="element-title text-uppercase">
+                    <a href="index.html" class="item-anchor">Masjid Darussakinah</a>
+                  </h5>
+                  <div class="kajian-info">
+                    <h5 id="judul-kajian">Jadwal Kajian Hari Ini</h5>
+                    <button id="tombol-jadwal" onclick="toggleJadwal()">Lihat Jadwal</button>
+                    <div id="deskripsi-kajian" style="display: none;"></div>
+                </div>
+                
+                <script>
+                    const jadwalKajian = {
+                        0: [ // Ahad / Minggu
+                            "Kajian Ba'da Subuh<br>Kitab Al Wajiz<br>Ustadz Farhan Elhubby – hafizahullah",
+                            "Kajian Ba'da Isya<br>Bahasa Arab (Kitab Al Muyassar)<br>Ustadz Iwan Abu Ihsan – hafizahullah"
+                        ],
+                        1: [ // Senin
+                            "Kajian Ba'da Isya<br>Kitab Solat Nabi<br>Ustadz Rahmat Nur Hidayat – hafizahullah"
+                        ],
+                        2: [ // Selasa
+                            "Kajian Ba'da Isya<br>Bahasa Arab (Durusul Lughoh)<br>Ustadz Iwan Abu Ihsan – hafizahullah"
+                        ],
+                        3: [ // Rabu
+                            "Kajian Ba'da Isya<br>Bahasa Arab (Kitab Al Muyassar – Meroja'ah)<br>Ustadz Iwan Abu Ihsan – hafizahullah"
+                        ],
+                        4: [ // Kamis
+                            "Kajian Ba'da Isya<br>Ensiklopedia Muslimah<br>Ustadz Farhan Elhubby – hafizahullah"
+                        ],
+                        5: [ // Jumat
+                            "Tidak ada kajian rutin."
+                        ],
+                        6: [ // Sabtu
+                            "Kajian Ba'da Subuh<br>Fiqih Pengantar Ilmu Waris<br>Ustadz Iwan Abu Ihsan – hafizahullah",
+                            "Kajian Ba'da Isya<br>Kitab Umdatul Ahkam<br>Ustadz Rahmat Nur Hidayat – hafizahullah"
+                        ]
+                    };
+                
+                    const hariIni = new Date().getDay(); // 0 = Minggu, 1 = Senin, dst
+                    const deskripsiElemen = document.getElementById("deskripsi-kajian");
+                    const jadwalHariIni = jadwalKajian[hariIni];
+                    
+                    // Set jadwal ke dalam elemen (tetap tersembunyi)
+                    deskripsiElemen.innerHTML = jadwalHariIni.join("<br><br>");
+                
+                    function toggleJadwal() {
+                        const tombol = document.getElementById("tombol-jadwal");
+                        if (deskripsiElemen.style.display === "none") {
+                            deskripsiElemen.style.display = "block";
+                            tombol.textContent = "Sembunyikan Jadwal";
+                        } else {
+                            deskripsiElemen.style.display = "none";
+                            tombol.textContent = "Lihat Jadwal";
+                        }
+                    }
+                </script>
+                  
+                  <div class="btn-left">
+                    <!-- Link to follow live studies on YouTube -->
+                    <a href="https://www.youtube.com/@MasjidDarussakinahBatam/streams" 
+                       target="_blank" 
+                       class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+                        Ikuti Kajian Live
+                    </a>
+                    
+                    <!-- Line break to separate the links -->
+                    <br>
+                    
+                    <!-- Location link -->
+                    <a href="https://maps.app.goo.gl/sQPRqpq1o92Ffiox8" 
+                       target="_blank" 
+                       class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+                        LOKASI
+                    </a>
+                </div>              
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="banner-item image-zoom-effect">
+                <div class="image-holder">
+                  <a href="#">
+                    <img src="images/nurulhidayah.PNG" alt="product" class="img-fluid">
+                  </a>
+                </div>
+                <div class="banner-content py-4">
+                  <h5 class="element-title text-uppercase">
+                    <a href="index.html" class="item-anchor">Masjid Nurul Hidayah</a>
+                  </h5>
+                  <div class="kajian-nurulhidayah">
+                    <h5 id="judul-kajian-nurulhidayah">Jadwal Kajian Hari Ini</h5>
+                    <button id="tombol-jadwal-nurulhidayah" onclick="toggleJadwalNurulHidayah()">Lihat Jadwal</button>
+                    <div id="deskripsi-kajian-nurulhidayah" style="display: none;"></div>
+                </div>
+                
+                <script>
+                    const jadwalNurulHidayah = {
+                        0: [ // Ahad
+                            "Kajian Ba'da Maghrib<br>Tauhid (Syekh Muhammad bin Abdul Wahab)<br>Ustadz Ajat Sudrajat – hafizahullah"
+                        ],
+                        1: [ // Senin
+                            "Kajian Ba'da Maghrib<br>Bahjatul Qulubul Abrar<br>Ustadz Ahmad Wahib B.A – hafizahullah"
+                        ],
+                        2: [ // Selasa
+                            "Belum ada jadwal kajian rutin"
+                        ],
+                        3: [ // Rabu
+                            "Belum ada jadwal kajian rutin"
+                        ],
+                        4: [ // Kamis
+                            "Belum ada jadwal kajian rutin"
+                        ],
+                        5: [ // Jumat
+                            "Kajian Ba'da Maghrib<br>Manhajus Salaf fii Tazkiyyatin Nufu<br>Ustadz Rahmat Nur Hidayat – hafizahullah"
+                        ],
+                        6: [ // Sabtu
+                            "Kajian Ba'da Maghrib<br>Tauhid Al-Islam<br>Ustadz Fikri Al Hamdi – hafizahullah"
+                        ]
+                    };
+                
+                    document.addEventListener('DOMContentLoaded', function() {
+                        try {
+                            const hariIni = new Date().getDay();
+                            const elemenNurulHidayah = document.getElementById("deskripsi-kajian-nurulhidayah");
+                            
+                            if (elemenNurulHidayah) {
+                                if (jadwalNurulHidayah[hariIni]) {
+                                    elemenNurulHidayah.innerHTML = jadwalNurulHidayah[hariIni].join("<br><br>");
+                                } else {
+                                    elemenNurulHidayah.innerHTML = "Tidak ada kajian rutin hari ini";
+                                }
+                            }
+                        } catch (error) {
+                            console.error("Error:", error);
+                            document.getElementById("deskripsi-kajian-nurulhidayah").innerHTML = 
+                                "Gagal memuat jadwal. Silakan refresh halaman.";
+                        }
+                    });
+                
+                    function toggleJadwalNurulHidayah() {
+                        const deskripsiElemen = document.getElementById("deskripsi-kajian-nurulhidayah");
+                        const tombol = document.getElementById("tombol-jadwal-nurulhidayah");
+                        
+                        if (deskripsiElemen.style.display === "none") {
+                            deskripsiElemen.style.display = "block";
+                            tombol.textContent = "Sembunyikan Jadwal";
+                        } else {
+                            deskripsiElemen.style.display = "none";
+                            tombol.textContent = "Lihat Jadwal";
+                        }
+                    }
+                </script>
+                  
+                  <div class="btn-left">
+                    <a href="https://www.instagram.com/ngaji_.yuk/" target="_blank" class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+                      Ikuti Kajian Live
+                    </a>
 
-        <!-- Profile -->
-        <section class="profile">
-            <h2>PROFILE</h2>
-            <div class="line"></div>
-            <p>
-                Hendra Kurniawan, an experienced individual in the manufacturing industry, has a diverse work history. With 3 years of experience working in Japan as a CNC Machinist in a company specializing in the production of mold plates for car components, Hendra then transitioned to a role as a Maintenance Automation Technician at PT Panasonic Industrial Devices Batam, a Semiconductor manufacturing company, where he worked for 2 years. Currently, he is working at PT Sumitomo Wiring Systems Batam Indonesia as a Design Development. While studying at Batam State Polytechnic and committed to continue learning and growing in his career.
-            </p>
-        </section>
+                    <br>
+                    
+                    <!-- Location link -->
+                    <a href="hhttps://maps.app.goo.gl/JA3RsGAMeRo1Wc999" 
+                       target="_blank" 
+                       class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+                        LOKASI
+                    </a>
+              
+                  </div>
+                </div>
+              </div>
+            </div>
 
-        <!-- Education -->
-        <section class="education">
-            <h2>EDUCATION</h2>
-            <div class="line"></div>
-            <p><strong>Batam State Polytechnic</strong> <span class="right">Batam, ID</span></p>
-            <p><em>Bachelor Degree, Electronic Engineering Technology</em> <span class="right">Present</span></p>
-            <p>PCB Design, Internet of Things, Mechanical Design <span class="right">GPA 7 Semester: 3.65/4.00</span></p>
-        </section>
+            <div class="swiper-slide">
+              <div class="banner-item image-zoom-effect">
+                <div class="image-holder">
+                  <a href="#">
+                    <img src="images/hang-media.png" alt="product" class="img-fluid">
+                  </a>
+                </div>
+                <div class="banner-content py-4">
+                  <h5 class="element-title text-uppercase">
+                    <a href="index.html" class="item-anchor">Masjid Hang</a>
+                  </h5>
+                  <div class="kajian-hang">
+                    <h5 id="judul-kajian-hang">Jadwal Kajian Hari Ini</h5>
+                    <button id="tombol-jadwal-hang" onclick="toggleJadwalHang()">Lihat Jadwal</button>
+                    <div id="deskripsi-kajian-hang" style="display: none;"></div>
+                </div>
+                
+                <script>
+                    const jadwalHang = {
+                        0: [ // Ahad
+                            "Kajian Ba'da Subuh<br>Mutashar Minhajul Qosidri<br>Ustadz Ferry Anshar, BA – hafizahullah",
+                            "Kajian Ba'da Maghrib<br>Syarhus Sunnah<br>Ustadz Rahmat Nur Hidayat – hafizahullah"
+                        ],
+                        1: [ // Senin
+                            "Kajian Ba'da Ashar (Khusus Muslimah)<br>Fiqih Keluarga<br>Ustadz Raihan, BA – hafizahullah",
+                            "Kajian Ba'da Maghrib<br>Bulughul Maram<br>Ustadz Raihan, BA – hafizahullah"
+                        ],
+                        2: [ // Selasa
+                            "Kajian Ba'da Ashar (Khusus Muslimah)<br>Fiqih Wanita<br>Ustadz Firdaus, LC – hafizahullah",
+                            "Kajian Ba'da Maghrib<br>Tahsin Talaqqi Al Qur'an<br>Ustadz Abu Fawwaz Ahmad – hafizahullah"
+                        ],
+                        3: [ // Rabu
+                            "Kajian Ba'da Maghrib<br>Kitab Akhto' Mushollin<br>Ustadz Fikri Alhamdi, BA – hafizahullah"
+                        ],
+                        4: [ // Kamis
+                            "Kajian Ba'da Maghrib<br>Tafsir Abdurrahman As Sa'di<br>Ustadz Muhammad Thoha, LC – hafizahullah"
+                        ],
+                        5: [ // Jumat
+                            "Kajian Ba'da Subuh<br>Fadhlu Bayani Tholabil Ilmi<br>Ustadz Rahmat Nur Hidayat – hafizahullah",
+                            "Kajian Ba'da Maghrib<br>Syarah Aqidah Wasithiyah<br>Ustadz Ahmad Supiandi, S.Pd.I – hafizahullah"
+                        ],
+                        6: [ // Sabtu
+                            "Kajian Ba'da Subuh<br>Kitab Manzhumah Raiyah<br>Ustadz Mahmudi Arif Dahlan, S.Thi – hafizahullah",
+                            "Kajian Ba'da Ashar (Khusus Muslimah)<br>Fawaidul Fawaid<br>Ustadz Farhan Elhubby – hafizahullah",
+                            "Kajian Ba'da Maghrib<br>Riyadhus Sholihin<br>Ustadz Rahmat Nur Hidayat – hafizahullah"
+                        ]
+                    };
+                
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const hari = new Date().getDay(); // 0 = Minggu (Ahad), 1 = Senin, dst
+                        const elemen = document.getElementById("deskripsi-kajian-hang");
+                        const jadwalHari = jadwalHang[hari];
+                        
+                        if (elemen && jadwalHari) {
+                            elemen.innerHTML = jadwalHari.join("<br><br>");
+                        } else {
+                            elemen.innerHTML = "Tidak ada kajian rutin hari ini";
+                        }
+                    });
+                
+                    function toggleJadwalHang() {
+                        const deskripsiElemen = document.getElementById("deskripsi-kajian-hang");
+                        const tombol = document.getElementById("tombol-jadwal-hang");
+                        
+                        if (deskripsiElemen.style.display === "none") {
+                            deskripsiElemen.style.display = "block";
+                            tombol.textContent = "Sembunyikan Jadwal";
+                        } else {
+                            deskripsiElemen.style.display = "none";
+                            tombol.textContent = "Lihat Jadwal";
+                        }
+                    }
+                </script>
+                  
+                  <div class="btn-left">
+                    <a href="https://www.youtube.com/@HangTV/streams" target="_blank" class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+                      Ikuti Kajian Live
+                    </a>
 
-        <!-- Relevant Coursework -->
-        <section class="coursework">
-            <h2>RELEVANT COURSEWORK</h2>
-            <div class="line"></div>
-            <p>IoT Engineer, Automation Development, Design Development, PCB Design, Prototype Modelling</p>
-        </section>
+                    <br>
+                    
+                    <!-- Location link -->
+                    <a href="https://maps.app.goo.gl/74UmQsSqcncbLi8q7" 
+                       target="_blank" 
+                       class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+                        LOKASI
+                    </a>
+              
+                  </div>
+                </div>
+              </div>
+            </div>
 
-        <!-- Technical Skills -->
-        <section class="skills">
-            <h2>TECHNICAL SKILLS</h2>
-            <div class="line"></div>
-            <p><strong>Programming Language:</strong> C++, Python</p>
-            <p><strong>Software:</strong> FluidSIM, CX-Programmer, EasyEda, Visual Basic Studio, IDE, Fusion360, Inventor, AutoCad, SolidWorks, Office, Excel.</p>
-        </section>
+            <div class="swiper-slide">
+              <div class="banner-item image-zoom-effect">
+                <div class="image-holder">
+                  <a href="#">
+                    <img  src="images/msn.jpg" alt="product" class="img-fluid">
+                  </a>
+                </div>
+                <div class="banner-content py-4">
+                  <h5 class="element-title text-uppercase">
+                    <a href="index.html" class="item-anchor">Masjid Sabiilun Najah</a>
+                  </h5>
+                  <div class="kajian-sabiil">
+    <h5 id="judul-kajian-sabiil">Jadwal Kajian Hari Ini</h5>
+        <button id="tombol-jadwal-sabiil" onclick="toggleJadwalSabiil()">Lihat Jadwal</button>
+      <div id="deskripsi-kajian-sabiil" style="display: none;"></div>
+  </div>
+  
+  <script>
+      // Data jadwal kajian
+      const jadwalSabiil = {
+          0: [ // Ahad
+              "Kajian Ba'da Subuh<br>Al Qowa'id Ushul Al Jaami'ah<br>Ustadz Rahmat Nur Hidayat – hafizahullah",
+              "Kajian Ba'da Maghrib<br>Tahsin/Tahfidz Al Qur'an<br>Ustadz Ibrahim, S.H.I – hafizahullah"
+          ],
+          1: [ // Senin
+              "Kajian Ba'da Subuh<br>Al Lu'lu' Al Maknuun<br>Ustadz Abu Fairuz Ahmad Ridwan, Lc, M.A – hafizahullah",
+              "Kajian Ba'da Maghrib<br>Manhajul Imam As-Syafi'i<br>Ustadz Fikri Alhamdi, B.A – hafizahullah"
+          ],
+          2: [ // Selasa
+              "Kajian Ba'da Subuh<br>Shohih Muslim<br>Ustadz Abu Fairuz Ahmad Ridwan, Lc, M.A – hafizahullah",
+              "Kajian Ba'da Maghrib<br>Bulughul Maram<br>Ustadz Abu Fairuz Ahmad Ridwan, Lc, M.A – hafizahullah"
+          ],
+          3: [ // Rabu
+              "Kajian Ba'da Subuh<br>Shohih Muslim<br>Ustadz Abu Fairuz Ahmad Ridwan, Lc, M.A – hafizahullah",
+              "Kajian Ba'da Maghrib<br>Tafsir Ibnu Katsir<br>Ustadz Abu Fairuz Ahmad Ridwan, Lc, M.A – hafizahullah"
+          ],
+          4: [ // Kamis
+              "Kajian Ba'da Subuh<br>Al Wabilush Shayyib<br>Ustadz Abu Fairuz Ahmad Ridwan, Lc, M.A – hafizahullah",
+              "Kajian Ba'da Maghrib<br>Miftahul Daari Sa'adah<br>Ustadz Abu Fairuz Ahmad Ridwan, Lc, M.A – hafizahullah"
+          ],
+          5: [ // Jumat
+              "Kajian Ba'da Subuh<br>Shahih Qashash An Nabawi<br>Ustadz Ahmad Wahib M.A – hafizahullah",
+              "Kajian Ba'da Maghrib<br>Madarijus Salikin<br>Ustadz Abu Fairuz Ahmad Ridwan, Lc, M.A – hafizahullah"
+          ],
+          6: [ // Sabtu
+              "Kajian Ba'da Subuh<br>Asy Sharhu Wal Ibanah<br>Ustadz Ahmad Wahib M.A – hafizahullah",
+              "Kajian Ba'da Maghrib<br>Tahsin/Tahfidz Al Qur'an<br>Ustadz Ibrahim, S.H.I – hafizahullah"
+          ]
+      };
+  
+      // Eksekusi setelah DOM siap
+      document.addEventListener('DOMContentLoaded', function() {
+          try {
+              const hariIni = new Date().getDay(); // 0 = Minggu, 1 = Senin, dst
+              const elemenSabiil = document.getElementById("deskripsi-kajian-sabiil");
+              
+              if (elemenSabiil) {
+                  if (jadwalSabiil[hariIni]) {
+                      elemenSabiil.innerHTML = jadwalSabiil[hariIni].join("<br><br>");
+                  } else {
+                      elemenSabiil.innerHTML = "Jadwal tidak tersedia untuk hari ini";
+                  }
+              }
+          } catch (error) {
+              console.error("Error memuat jadwal:", error);
+              document.getElementById("deskripsi-kajian-sabiil").innerHTML = 
+                  "Gagal memuat jadwal. Silakan refresh halaman.";
+          }
+      });
+  
+      function toggleJadwalSabiil() {
+          const deskripsiElemen = document.getElementById("deskripsi-kajian-sabiil");
+          const tombol = document.getElementById("tombol-jadwal-sabiil");
+          
+          if (deskripsiElemen.style.display === "none") {
+              deskripsiElemen.style.display = "block";
+              tombol.textContent = "Sembunyikan Jadwal";
+          } else {
+              deskripsiElemen.style.display = "none";
+              tombol.textContent = "Lihat Jadwal";
+          }
+      }
+  </script>
+                  
+                  
+                  <div class="btn-left">
+                    <a href="https://www.youtube.com/@sntivi/streams" target="_blank" class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+                      Ikuti Kajian Live  </a>
 
-        <!-- Experience -->
-        <section class="experience">
-            <h2>EXPERIENCE</h2>
-            <div class="line"></div>
-            <p><strong>PT Sumitomo Wiring Systems Batam Indonesia</strong> <span class="right">Batam, ID</span></p>
-            <p><em>Development Design</em> <span class="right">Oct 2023 - Present</span></p>
-            <ul>
-                <li>Supporting the work of Japan Sumitomo Development Department</li>
-                <li>Project Planner For New Product Trial</li>
-                <li>Analyze the Wire Harness manufacturing process for Productivity Improvement, Quality, and Cost</li>
-                <li>Interpreter</li>
-            </ul>
-            <div class="spacer"></div> <!-- Tambahkan elemen spacer di sini -->
-            <p><em>Design Engineer</em> <span class="right">Jun 2023 – Sept 2023</span></p>
-            <ul>
-                <li>Checker for new design Wire Harness</li>
-                <li>Incharge of new product trials</li>
-                <li>Analyze manufacturing process and material that can reduce the cost of making Wire Harness without damaging quality.</li>
-            </ul>
-            <div class="spacer"></div> <!-- Tambahkan elemen spacer di sini -->
-            <p><strong>PT Panasonic Industrial Devices Batam</strong> <span class="right">Batam, ID</span></p>
-            <p><em>Maintenance Automation Technician</em> <span class="right">Jun 2021 - Jun 2023</span></p>
-            <ul>
-                <li>Incharge Line Production</li>
-                <li>Analyze and troubleshoot any abnormalities in products and machine</li>
-                <li>Maintaining productivity and line efficiency</li>
-                <li>Maintenance</li>
-            </ul>
-            <div class="spacer"></div> <!-- Tambahkan elemen spacer di sini -->
-            <p><strong>エムケイケイ株式会社 / MKK Co.,LTD</strong> <span class="right">Ama City, JP</span></p>
-            <p><em>Computer Numerical Control Machinist</em> <span class="right">Apr 2018 – Apr 2021</span></p>
-            <ul>
-                <li>Incharge for 3 CNC Milling Machine & 1 CNC wirecut</li>
-                <li>Setter for tools and product</li>
-                <li>Maintenance</li>
-                <li>Trainer for Japanese New Employee</li>
-            </ul>
-        </section>
+                      <br>
+                    
+                    <!-- Location link -->
+                    <a href="https://maps.app.goo.gl/NZXNVSpt5S1akaJM7" 
+                       target="_blank" 
+                       class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+                        LOKASI
+                    </a>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="banner-item image-zoom-effect">
+                <div class="image-holder">
+                  <a href="#">
+                    <img src="images/alkahfi.PNG" alt="product" class="img-fluid">
+                  </a>
+                </div>
+                <div class="banner-content py-4">
+                  <h5 class="element-title text-uppercase">
+                    <a href="index.html" class="item-anchor">Masjid Al Kahfi</a>
+                  </h5>
+                  <div class="kajian-alkahfi">
+                    <h5 id="judul-kajian-alkahfi">Jadwal Kajian Hari Ini</h5>
+                    <button id="tombol-jadwal-alkahfi" onclick="toggleJadwalAlkahfi()">Lihat Jadwal</button>
+                    <div id="deskripsi-kajian-alkahfi" style="display: none;"></div>
+                </div>
+                
+                <script>
+                    const jadwalAlkahfi = {
+                        0: [ // Ahad
+                            "Kajian Ba'da Subuh<br>Al Qowa'id Ushul Al Jaami'ah<br>Ustadz Rahmat Nur Hidayat – hafizahullah",
+                            "Kajian Ba'da Maghrib<br>Belum tersedia"
+                        ],
+                        1: [ // Senin
+                            "Kajian Ba'da Subuh<br>Al Lu'lu' Al Maknuun<br>Ustadz Abu Fairuz Ahmad Ridwan, Lc, M.A – hafizahullah",
+                            "Kajian Ba'da Maghrib<br>Tadzkirotus Sami'<br>Ustadz Rahmat Nur Hidayat – hafizahullah"
+                        ],
+                        2: [ // Selasa
+                            "Kajian Ba'da Subuh<br>Shohih Muslim<br>Ustadz Abu Fairuz Ahmad Ridwan, Lc, M.A – hafizahullah",
+                            "Kajian Ba'da Maghrib<br>Al Mulakhas Kitab Tauhid<br>Ustadz Abu Nida Abdul Wahab – hafizahullah"
+                        ],
+                        3: [ // Rabu
+                            "Kajian Ba'da Subuh<br>Shohih Muslim<br>Ustadz Abu Fairuz Ahmad Ridwan, Lc, M.A – hafizahullah",
+                            "Kajian Ba'da Maghrib<br>Mukhtasar Tafsir Quran<br>Ustadz Ferri Anshar – hafizahullah"
+                        ],
+                        4: [ // Kamis
+                            "Kajian Ba'da Subuh<br>Al Wabilush Shayyib<br>Ustadz Abu Fairuz Ahmad Ridwan, Lc, M.A – hafizahullah",
+                            "Kajian Ba'da Maghrib<br>Kitabul Jami' Min Kitab Bulughul Maram<br>Ustadz Abu Ahmad Supiandi – hafizahullah"
+                        ],
+                        5: [ // Jumat
+                            "Kajian Ba'da Subuh<br>Shahih Qashash An Nabawi<br>Ustadz Ahmad Wahib M.A – hafizahullah",
+                            "Kajian Ba'da Maghrib<br>Ta'liqul Matin Ala Kitabi Ushulis Sunnah Wad Diin<br>Ustadz Rasyidin Abu Raiif – hafizahullah"
+                        ],
+                        6: [ // Sabtu
+                            "Kajian Ba'da Subuh<br>Asy Sharhu Wal Ibanah<br>Ustadz Ahmad Wahib M.A – hafizahullah",
+                            "Kajian Ba'da Maghrib<br>Fiqhus Sirah<br>Ustadz Mahmudi Arif Dahlan – hafizahullah"
+                        ]
+                    };
+                
+                    document.addEventListener('DOMContentLoaded', function() {
+                        try {
+                            const hariIni = new Date().getDay();
+                            const elemenAlkahfi = document.getElementById("deskripsi-kajian-alkahfi");
+                            
+                            if (elemenAlkahfi) {
+                                if (jadwalAlkahfi[hariIni]) {
+                                    elemenAlkahfi.innerHTML = jadwalAlkahfi[hariIni].join("<br><br>");
+                                } else {
+                                    elemenAlkahfi.innerHTML = "Jadwal kajian hari ini belum tersedia";
+                                }
+                            }
+                        } catch (error) {
+                            console.error("Error:", error);
+                            document.getElementById("deskripsi-kajian-alkahfi").innerHTML = 
+                                "Gagal memuat jadwal. Silakan coba lagi nanti.";
+                        }
+                    });
+                
+                    function toggleJadwalAlkahfi() {
+                        const deskripsiElemen = document.getElementById("deskripsi-kajian-alkahfi");
+                        const tombol = document.getElementById("tombol-jadwal-alkahfi");
+                        
+                        if (deskripsiElemen.style.display === "none") {
+                            deskripsiElemen.style.display = "block";
+                            tombol.textContent = "Sembunyikan Jadwal";
+                        } else {
+                            deskripsiElemen.style.display = "none";
+                            tombol.textContent = "Lihat Jadwal";
+                        }
+                    }
+                </script>
+                
+                <div class="btn-left">
+                    <a href="https://www.youtube.com/@Masjidalkahfibatam/streams" target="_blank" class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+                      Ikuti Kajian Live
+                      <br>
+                    
+                      <!-- Location link -->
+                      <a href="https://maps.app.goo.gl/RXJXpVyfaodooBfN8" 
+                         target="_blank" 
+                         class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+                          LOKASI
+                      </a>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="banner-item image-zoom-effect">
+                <div class="image-holder">
+                  <a href="#">
+                    <img src="images/alamin.PNG" alt="product" class="img-fluid">
+                  </a>
+                </div>
+                <div class="banner-content py-4">
+                  <h5 class="element-title text-uppercase">
+                    <a href="index.html" class="item-anchor">Masjid Al Amin Piayu</a>
+                  </h5>
+                  <div class="kajian-alamin">
+                    <h5 id="judul-kajian-alamin">Jadwal Kajian Hari Ini</h5>
+                    <button id="tombol-jadwal-alamin" onclick="toggleJadwalAlamin()">Lihat Jadwal</button>
+                    <div id="deskripsi-kajian-alamin" style="display: none;"></div>
+                </div>
+                
+                <script>
+                    const jadwalAlamin = {
+                        0: [ // Ahad
+                            "Kajian Ba'da Subuh<br>At-Tamassuku Bisunnati Fil Aqooidi Wal Ahkam<br>Ustadz Muhammad Arief – hafizahullah",
+                            "Kajian Ba'da Maghrib<br>Ighatsatul Lahfan Fil Mashaidisy Syaithon<br>Ustadz Abu Fairuz Ahmad Ridwan, Lc., MA – hafizahullah"
+                        ],
+                        1: [ // Senin
+                            "Kajian Ba'da Subuh<br>Belum tersedia",
+                            "Kajian Ba'da Maghrib<br>Al Mulakhos Fiqih<br>Ustadz Ferry Anshar, B.A – hafizahullah"
+                        ],
+                        2: [ // Selasa
+                            "Kajian Ba'da Subuh<br>Belum tersedia",
+                            "Kajian Ba'da Maghrib<br>Fiqih Asmaa Al Husna<br>Ustadz Ahmad Wahib, M.A – hafizahullah"
+                        ],
+                        3: [ // Rabu
+                            "Kajian Ba'da Subuh<br>Belum tersedia",
+                            "Kajian Ba'da Maghrib<br>Al Ushul Min Ilmil Ushul<br>Ustadz Sajjad Khalifa, LC – hafizahullah"
+                        ],
+                        4: [ // Kamis
+                            "Kajian Ba'da Subuh<br>Belum tersedia",
+                            "Kajian Ba'da Maghrib<br>Syarah Ushul Iman<br>Ustadz Rahmat Nur Hidayat – hafizahullah"
+                        ],
+                        5: [ // Jumat
+                            "Kajian Ba'da Subuh<br>Belum tersedia",
+                            "Kajian Ba'da Maghrib<br>Al Ikhlaash Thariiq Al Khoolash<br>Ustadz Wildan Siregar, S.Kom.I – hafizahullah"
+                        ],
+                        6: [ // Sabtu
+                            "Kajian Ba'da Subuh<br>Belum tersedia",
+                            "Kajian Ba'da Maghrib<br>Mukhtasar Ahadist Shiyam<br>Ustadz Sudirman Abu Nida – hafizahullah"
+                        ]
+                    };
+                
+                    document.addEventListener('DOMContentLoaded', function() {
+                        try {
+                            const hariIni = new Date().getDay();
+                            const elemenAlamin = document.getElementById("deskripsi-kajian-alamin");
+                            
+                            if (elemenAlamin) {
+                                if (jadwalAlamin[hariIni]) {
+                                    elemenAlamin.innerHTML = jadwalAlamin[hariIni].join("<br><br>");
+                                } else {
+                                    elemenAlamin.innerHTML = "Jadwal kajian hari ini belum tersedia";
+                                }
+                            }
+                        } catch (error) {
+                            console.error("Error:", error);
+                            document.getElementById("deskripsi-kajian-alamin").innerHTML = 
+                                "Gagal memuat jadwal. Silakan coba lagi nanti.";
+                        }
+                    });
+                
+                    function toggleJadwalAlamin() {
+                        const deskripsiElemen = document.getElementById("deskripsi-kajian-alamin");
+                        const tombol = document.getElementById("tombol-jadwal-alamin");
+                        
+                        if (deskripsiElemen.style.display === "none") {
+                            deskripsiElemen.style.display = "block";
+                            tombol.textContent = "Sembunyikan Jadwal";
+                        } else {
+                            deskripsiElemen.style.display = "none";
+                            tombol.textContent = "Lihat Jadwal";
+                        }
+                    }
+                </script>
 
-        <!-- Project Experience -->
-        <section class="projects">
-            <h2>PROJECT EXPERIENCE</h2>
-            <div class="line"></div>
-            <p><strong>Smart Door Lock System using Eye Movement Detection</strong> <span class="right">Jul 2024 - Dec 2024</span></p>
-            <p><em>Machine Learning</em></p>
-            <p>Developed a smart door lock system using Convolutional Neural Network (CNN) for authentication through eye movement detection. The system processes eye images, trains a CNN model, and evaluates reliability and responsiveness.</p>
-            <div class="spacer"></div> <!-- Tambahkan elemen spacer di sini -->
-            <p><strong>Rent Car Guard, Internet of Things</strong> <span class="right">Feb 2023 - Jul 2023</span></p>
-            <p><em>Internet of Things</em></p>
-            <p>This device improves rental car security with a speed alarm that triggers a buzzer and sends notifications when speed limits are exceeded, GPS tracking to monitor location, and an engine cutoff feature if the car isn't returned within 24 hours, reducing risks of theft, damage, and accidents.</p>
-        </section>
-     <!-- Footer dengan Tombol Download CV -->
-     <footer>
-        <a href="assets/CV_Hendra_Kurniawan.pdf" download class="download-button">Download CV</a>
-    </footer>
+                  <div class="btn-left">
+                    <a href="https://www.facebook.com/FP.Alamin.SeiBeduk" target="_blank" class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+                      Ikuti Kajian Live
+                      <br>
+                    
+                      <!-- Location link -->
+                      <a href="https://maps.app.goo.gl/r2hoFvHRJQ5osh41A" 
+                         target="_blank" 
+                         class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+                          LOKASI
+                      </a>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="banner-item image-zoom-effect">
+                <div class="image-holder">
+                  <a href="#">
+                    <img src="images/mjr.PNG" alt="product" class="img-fluid">
+                  </a>
+                </div>
+                <div class="banner-content py-4">
+                  <h5 class="element-title text-uppercase">
+                    <a href="index.html" class="item-anchor">Masjid Jabal Rahmah</a>
+                  </h5>
+                  <div class="kajian-jabalrahmah">
+    <h5 id="judul-kajian-jabalrahmah">Jadwal Kajian Hari Ini</h5>
+    <button id="tombol-jadwal-jabalrahmah" onclick="toggleJadwalJabalRahmah()">Lihat Jadwal</button>
+    <div id="deskripsi-kajian-jabalrahmah" style="display: none;"></div>
 </div>
+
+<script>
+    const jadwalJabalRahmah = {
+        0: [ // Ahad
+            "Kajian Ba'da Subuh<br>Kitab Asyroothus Saa'ah<br>Ustadz Abu Nida, S.Pd.I – hafizahullah",
+            "Kajian Ba'da Maghrib<br>Kitab Umdatul Ahkam<br>Ustadz Abu Ahmad – hafizahullah"
+        ],
+        1: [ // Senin
+            "Kajian Ba'da Subuh<br>Belum tersedia",
+            "Kajian Ba'da Maghrib<br>Tahsin Al Qur'an (Kitab Riyadhoh Imriin Bi Fakkihi)<br>Ustadz Abu Fawwaz – hafizahullah"
+        ],
+        2: [ // Selasa
+            "Kajian Ba'da Subuh<br>Belum tersedia",
+            "Kajian Ba'da Maghrib<br>Mengenal Sosok Perilaku Nabi ﷺ<br>Ustadz Firdaus, Lc., S.Pd.I – hafizahullah"
+        ],
+        3: [ // Rabu
+            "Kajian Ba'da Subuh<br>Belum tersedia",
+            "Kajian Ba'da Maghrib<br>Penjelasan Tentang Pohon Iman<br>Ustadz Rahmat Nur Hidayat – hafizahullah"
+        ],
+        4: [ // Kamis
+            "Kajian Ba'da Subuh<br>Belum tersedia",
+            "Kajian Ba'da Maghrib<br>Kaidah Penting Dalam Ibadah<br>Ustadz Abu Nida, S.Pd.I – hafizahullah"
+        ],
+        5: [ // Jumat
+            function() {
+                const date = new Date();
+                const weekOfMonth = Math.ceil(date.getDate() / 7);
+                
+                let asharSession = "Kajian Ba'da Ashar<br>Kajian Ummahat<br>";
+                if(weekOfMonth <= 2) {
+                    asharSession += "Ustadz Abu Ahmad – hafizahullah";
+                } else {
+                    asharSession += "Ustadz Abu Nida, S.Pd.I – hafizahullah";
+                }
+                
+                return [
+                    asharSession,
+                    "Kajian Ba'da Maghrib<br>Kajian Kitab Fiqih Asmaul Husna<br>Ustadz Ahmad Wahb, M.A – hafizahullah"
+                ];
+            }
+        ],
+        6: [ // Sabtu
+            "Kajian Ba'da Subuh<br>Kitab Iklash<br>Ustadz Rahmat Nur Hidayat – hafizahullah",
+            "Kajian Ba'da Maghrib<br>Tafsir Al Qur'an<br>Ustadz Ferry Anshar, B.A – hafizahullah"
+        ]
+    };
+
+    document.addEventListener('DOMContentLoaded', function() {
+        try {
+            const hariIni = new Date().getDay();
+            const elemenJabalRahmah = document.getElementById("deskripsi-kajian-jabalrahmah");
+            
+            if (elemenJabalRahmah) {
+                let jadwalHariIni;
+                
+                // Handle special case for Jumat (dynamic content)
+                if (hariIni === 5 && typeof jadwalJabalRahmah[hariIni][0] === 'function') {
+                    jadwalHariIni = jadwalJabalRahmah[hariIni][0]();
+                } else {
+                    jadwalHariIni = jadwalJabalRahmah[hariIni] || ["Jadwal belum tersedia"];
+                }
+                
+                elemenJabalRahmah.innerHTML = jadwalHariIni.join("<br><br>");
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            document.getElementById("deskripsi-kajian-jabalrahmah").innerHTML = 
+                "Gagal memuat jadwal. Silakan coba lagi nanti.";
+        }
+    });
+
+    function toggleJadwalJabalRahmah() {
+        const deskripsiElemen = document.getElementById("deskripsi-kajian-jabalrahmah");
+        const tombol = document.getElementById("tombol-jadwal-jabalrahmah");
+        
+        if (deskripsiElemen.style.display === "none") {
+            deskripsiElemen.style.display = "block";
+            tombol.textContent = "Sembunyikan Jadwal";
+        } else {
+            deskripsiElemen.style.display = "none";
+            tombol.textContent = "Lihat Jadwal";
+        }
+    }
+</script>
+
+<div class="btn-left">
+  <a href="https://www.facebook.com/masjidjabalrahmah.batam.9" target="_blank" class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+    Ikuti Kajian Live
+  </a>
+
+  <br>
+                    
+  <!-- Location link -->
+  <a href="https://maps.app.goo.gl/bTT82nixD7wRcg51A" 
+     target="_blank" 
+     class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+      LOKASI
+  </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="swiper-pagination"></div>
+</div>
+<div class="icon-arrow icon-arrow-left"><svg width="50" height="50" viewBox="0 0 24 24">
+    <use xlink:href="#arrow-left"></use>
+  </svg></div>
+<div class="icon-arrow icon-arrow-right"><svg width="50" height="50" viewBox="0 0 24 24">
+    <use xlink:href="#arrow-right"></use>
+  </svg></div>
+</div>
+</div>
+</section>
+
+
+<section class="elegant-swiper-section">
+  <div class="elegant-container">
+    <div class="continuous-swiper">
+      <div class="swiper-wrapper">
+      <!-- Feature 1 -->
+<div class="swiper-slide elegant-slide">
+  <a href="images/jadwal-darussakinah.png" target="_blank" class="slide-link">
+    <div class="slide-content">
+      <svg width="38" height="38" viewBox="0 0 24 24">
+        <use xlink:href="#calendar"></use>
+      </svg>
+      <h4>Masjid Darussakinah</h4>
+      <p>Klik untuk lihat jadwal lengkap kajian.</p>
+    </div>
+  </a>
+</div>
+        
+        <!-- Feature 2 -->
+<div class="swiper-slide elegant-slide">
+  <a href="images/jadwal-nurulhidayah.PNG" target="_blank" class="slide-link">
+    <div class="slide-content">
+      <svg width="38" height="38" viewBox="0 0 24 24">
+        <use xlink:href="#calendar"></use>
+      </svg>
+      <h4>Masjid Nurul Hidayah</h4>
+      <p>Klik untuk lihat jadwal lengkap kajian.</p>
+    </div>
+  </a>
+</div>
+        
+           <!-- Feature 3 -->
+<div class="swiper-slide elegant-slide">
+  <a href="images/jadwal-hang.PNG" target="_blank" class="slide-link">
+    <div class="slide-content">
+      <svg width="38" height="38" viewBox="0 0 24 24">
+        <use xlink:href="#calendar"></use>
+      </svg>
+      <h4>Masjid Hang</h4>
+      <p>Klik untuk lihat jadwal lengkap kajian.</p>
+    </div>
+  </a>
+</div>
+        
+              <!-- Feature 4 -->
+<div class="swiper-slide elegant-slide">
+  <a href="images/jadwal-sabilun.jpg" target="_blank" class="slide-link">
+    <div class="slide-content">
+      <svg width="38" height="38" viewBox="0 0 24 24">
+        <use xlink:href="#calendar"></use>
+      </svg>
+      <h4>Masjid Sabilunnajah</h4>
+      <p>Klik untuk lihat jadwal lengkap kajian.</p>
+    </div>
+  </a>
+</div>
+
+             <!-- Feature 5 -->
+<div class="swiper-slide elegant-slide">
+  <a href="images/jadwal-ais.jpg" target="_blank" class="slide-link">
+    <div class="slide-content">
+      <svg width="38" height="38" viewBox="0 0 24 24">
+        <use xlink:href="#calendar"></use>
+      </svg>
+      <h4>Masjid Al Kahfi</h4>
+      <p>Klik untuk lihat jadwal lengkap kajian.</p>
+    </div>
+  </a>
+</div>
+
+        
+                    <!-- Feature 6 -->
+<div class="swiper-slide elegant-slide">
+  <a href="images/jadwal-aalamin.jpg" target="_blank" class="slide-link">
+    <div class="slide-content">
+      <svg width="38" height="38" viewBox="0 0 24 24">
+        <use xlink:href="#calendar"></use>
+      </svg>
+      <h4>Masjid Al Amin</h4>
+      <p>Klik untuk lihat jadwal lengkap kajian.</p>
+    </div>
+  </a>
+</div>
+      
+    <!-- Feature 7 -->
+    <div class="swiper-slide elegant-slide">
+      <a href="images/jadwal-mjr.jpg" target="_blank" class="slide-link">
+        <div class="slide-content">
+          <svg width="38" height="38" viewBox="0 0 24 24">
+            <use xlink:href="#calendar"></use>
+          </svg>
+          <h4>Masjid Jabal Rahmah</h4>
+          <p>Klik untuk lihat jadwal lengkap kajian.</p>
+        </div>
+      </a>
+    </div>
+
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    new Swiper('.continuous-swiper', {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
+      centeredSlides: true,
+      speed: 800,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        nextEl: '.elegant-next',
+        prevEl: '.elegant-prev',
+      },
+      breakpoints: {
+        480: {
+          slidesPerView: 2,
+        },
+        768: {
+          slidesPerView: 3,
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 30,
+        }
+      }
+    });
+  });
+</script>
+  
+  <section id="new-arrival" class="new-arrival product-carousel py-1 position-relative overflow-hidden">
+    <div class="container">
+      <div class="d-flex flex-wrap justify-content-between align-items-center mt-5 mb-1">
+        <h4 class="text-uppercase">Jariah Way</h4>
+        
+      </div>
+      <div class="swiper product-swiper open-up" data-aos="zoom-out">
+        <div class="swiper-wrapper d-flex">
+          <div class="swiper-slide">
+            
+            <div class="product-item image-zoom-effect link-effect">
+              <div class="image-holder position-relative">
+                <a href="images/jariah-ais.PNG" download="jariah-ais.PNG">
+                  <img src="images/jariah-ais.PNG" alt="categories" class="product-image img-fluid" style="width: 300px; height: 300px; object-fit: cover;">
+                </a>
+                <a href="index.html" class="btn-icon btn-wishlist">
+                  <svg width="24" height="24" viewBox="0 0 24 24">
+                    <use xlink:href="#heart"></use>
+                  </svg>
+                </a>
+                <div class="product-content">
+                  <h5 class="element-title text-uppercase fs-5 mt-3">
+                    <a href="index.html"></a>
+                  </h5>
+                  <a href="#" class="text-decoration-none"><span></span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="product-item image-zoom-effect link-effect">
+              <div class="image-holder position-relative">
+                <a href="images/jariah-sntv.PNG" download="jariah-sntv.PNG">
+                  <img src="images/jariah-sntv.PNG" alt="categories" class="product-image img-fluid" style="width: 500px; height: 300px; object-fit: cover;">
+                </a>
+                <a href="index.html" class="btn-icon btn-wishlist">
+                  <svg width="24" height="24" viewBox="0 0 24 24">
+                    <use xlink:href="#heart"></use>
+                  </svg>
+                </a>
+                <div class="product-content">
+                  <h5 class="element-title text-uppercase fs-5 mt-3">
+                    <a href="index.html"></a>
+                  </h5>
+                  <a href="#" class="text-decoration-none"><span></span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+              <div class="product-item image-zoom-effect link-effect">
+                <div class="image-holder position-relative">
+                  <a href="images/jariah-alamin.PNG" download="jariah-alamin.PNG">
+                    <img src="images/jariah-alamin.PNG" alt="categories" class="product-image img-fluid" style="width: 500px; height: 300px; object-fit: cover;">
+                  </a>
+                  <a href="index.html" class="btn-icon btn-wishlist">
+                    <svg width="24" height="24" viewBox="0 0 24 24">
+                      <use xlink:href="#heart"></use>
+                    </svg>
+                  </a>
+                  <div class="product-content">
+                    <h5 class="element-title text-uppercase fs-5 mt-3">
+                      <a href="index.html"></a>
+                    </h5>
+                    <a href="#" class="text-decoration-none"><span></span></a>
+                  </div>
+                </div>
+              </div>
+                  </div>
+
+                  <div class="swiper-slide">
+                    <div class="product-item image-zoom-effect link-effect">
+                      <div class="image-holder position-relative">
+                        <a href="images/jariah-darussakinah.PNG" download="jariah-darussakinah.PNG">
+                          <img src="images/jariah-darussakinah.PNG" alt="categories" class="product-image img-fluid" style="width: 500px; height: 300px; object-fit: cover;">
+                        </a>
+                        <a href="index.html" class="btn-icon btn-wishlist">
+                          <svg width="24" height="24" viewBox="0 0 24 24">
+                            <use xlink:href="#heart"></use>
+                          </svg>
+                        </a>
+                        <div class="product-content">
+                          <h5 class="element-title text-uppercase fs-5 mt-3">
+                            <a href="index.html"></a>
+                          </h5>
+                          <a href="#" class="text-decoration-none"><span></span></a>
+                        </div>
+                      </div>
+                    </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                          <div class="product-item image-zoom-effect link-effect">
+                            <div class="image-holder position-relative">
+                              <a href="images/jariah-hang.jpg" download="jariah-hang.jpg">
+                                <img src="images/jariah-hang.jpg" alt="categories" class="product-image img-fluid" style="width: 500px; height: 300px; object-fit: cover;">
+                              </a>
+                              <a href="index.html" class="btn-icon btn-wishlist">
+                                <svg width="24" height="24" viewBox="0 0 24 24">
+                                  <use xlink:href="#heart"></use>
+                                </svg>
+                              </a>
+                              <div class="product-content">
+                                <h5 class="element-title text-uppercase fs-5 mt-3">
+                                  <a href="index.html"></a>
+                                </h5>
+                                <a href="#" class="text-decoration-none"><span></span></a>
+                              </div>
+                            </div>
+                          </div>
+                              </div>
+                              
+                        <div class="swiper-slide">
+                          <div class="product-item image-zoom-effect link-effect">
+                            <div class="image-holder position-relative">
+                              <a href="images/jariah-mjr.jpg" download="jariah-mjr.jpg">
+                                <img src="images/jariah-mjr.jpg" alt="categories" class="product-image img-fluid" style="width: 500px; height: 300px; object-fit: cover;">
+                              </a>
+                              <a href="index.html" class="btn-icon btn-wishlist">
+                                <svg width="24" height="24" viewBox="0 0 24 24">
+                                  <use xlink:href="#heart"></use>
+                                </svg>
+                              </a>
+                              <div class="product-content">
+                                <h5 class="element-title text-uppercase fs-5 mt-3">
+                                  <a href="index.html"></a>
+                                </h5>
+                                <a href="#" class="text-decoration-none"><span></span></a>
+                              </div>
+                            </div>
+                          </div>
+                              </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <div class="icon-arrow icon-arrow-left"><svg width="50" height="50" viewBox="0 0 24 24">
+          <use xlink:href="#arrow-left"></use>
+        </svg></div>
+      <div class="icon-arrow icon-arrow-right"><svg width="50" height="50" viewBox="0 0 24 24">
+          <use xlink:href="#arrow-right"></use>
+        </svg></div>
+    </div>
+  </section>
+
+
+
+  <section class="video-section">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-12 d-flex justify-content-center">
+          <div class="custom-video-wrapper">
+            <video class="custom-video" controls>
+              <source src="images/vidiosingkat.mp4" type="video/mp4">
+            
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  
+
+  <section class="testimonials py-5 bg-light">
+    <div class="section-header text-center mt-5">
+      <h3 class="section-title">REMINDER</h3>
+    </div>
+    <div class="swiper testimonial-swiper overflow-hidden my-5">
+      <div class="swiper-wrapper d-flex">
+        <div class="swiper-slide">
+          <div class="testimonial-item text-center">
+            <blockquote>
+              <p>“Diantara Privilege Yang Terkadang Tidak Disadari Dizaman Sekarang Adalah Tidak Memiliki Hutang.”</p>
+              <div class="review-title text-uppercase">@Mahasiswa.Salaf</div>
+            </blockquote> 
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="testimonial-item text-center">
+            <blockquote>
+              <p>“... Sungguh Dengan Menjalankan Sunnah Rasulullah Saja Kita Sudah Letih., Kenapa Ada Penambahan Yang Tidak Mendatangkan Keuntungan Bagi Kita Di dunia Dan Akhirat ?!</p>
+              <div class="review-title text-uppercase">Ustadz Armen Halim Naro رحمه الله</div>
+            </blockquote>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="testimonial-item text-center">
+            <blockquote>
+              <p>“Ketika Engkau Tidak Bergantung Lagi Kepada Manusia, Doamu Akan Dikabulkan.”</p>
+              <div class="review-title text-uppercase">Mahasiswa.Salaf</div>
+            </blockquote>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="testimonial-item text-center">
+            <blockquote>
+              <p>“Kalian Lebih Membutuhkan Adab Yang Baik Meski Sedikit, Dibanding Ilmu Yang Banyak</p>
+              <div class="review-title text-uppercase">Laits Bin Sa'ad</div>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-swiper-pagination d-flex justify-content-center mb-5"></div>
+  </section>
+
+  <!--
+  <section class="blog py-5">
+    <div class="container">
+      <div class="d-flex flex-wrap justify-content-between align-items-center mt-5 mb-3">
+        <h4 class="text-uppercase">Read Blog Posts</h4>
+        <a href="index.html" class="btn-link">View All</a>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <article   class="post-item">
+            <div class="post-image">
+              <a href="index.html">
+                <img src="images/post-image1.jpg" alt="image" class="post-grid-image img-fluid">
+              </a>
+            </div>
+            <div class="post-content d-flex flex-wrap gap-2 my-3">
+              <div class="post-meta text-uppercase fs-6 text-secondary">
+                <span class="post-category">Fashion /</span>
+                <span class="meta-day"> jul 11, 2022</span>
+              </div>
+              <h5 class="post-title text-uppercase">
+                <a href="index.html">How to look outstanding in pastel</a>
+              </h5>
+              <p>Dignissim lacus,turpis ut suspendisse vel tellus.Turpis purus,gravida orci,fringilla...</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-4">
+          <article class="post-item">
+            <div class="post-image">
+              <a href="index.html">
+                <img src="images/post-image2.jpg" alt="image" class="post-grid-image img-fluid">
+              </a>
+            </div>
+            <div class="post-content d-flex flex-wrap gap-2 my-3">
+              <div class="post-meta text-uppercase fs-6 text-secondary">
+                <span class="post-category">Fashion /</span>
+                <span class="meta-day"> jul 11, 2022</span>
+              </div>
+              <h5 class="post-title text-uppercase">
+                <a href="index.html">Top 10 fashion trend for summer</a>
+              </h5>
+              <p>Turpis purus, gravida orci, fringilla dignissim lacus, turpis ut suspendisse vel tellus...</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-4">
+          <article class="post-item">
+            <div class="post-image">
+              <a href="index.html">
+                <img src="images/post-image3.jpg" alt="image" class="post-grid-image img-fluid">
+              </a>
+            </div>
+            <div class="post-content d-flex flex-wrap gap-2 my-3">
+              <div class="post-meta text-uppercase fs-6 text-secondary">
+                <span class="post-category">Fashion /</span>
+                <span class="meta-day"> jul 11, 2022</span>
+              </div>
+              <h5 class="post-title text-uppercase">
+                <a href="index.html">Crazy fashion with unique moment</a>
+              </h5>
+              <p>Turpis purus, gravida orci, fringilla dignissim lacus, turpis ut suspendisse vel tellus...</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="logo-bar py-5 my-5">
+    <div class="container">
+      <div class="row">
+        <div class="logo-content d-flex flex-wrap justify-content-between">
+          <img src="images/logo1.png" alt="logo" class="logo-image img-fluid">
+          <img src="images/logo2.png" alt="logo" class="logo-image img-fluid">
+          <img src="images/logo3.png" alt="logo" class="logo-image img-fluid">
+          <img src="images/logo4.png" alt="logo" class="logo-image img-fluid">
+          <img src="images/logo5.png" alt="logo" class="logo-image img-fluid">
+        </div>
+      </div>
+    </div>
+  </section>
+
+-->
+
+  <section class="newsletter bg-light" style="background: url(images/pattern-bg.png) no-repeat;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 py-5 my-5">
+          <div class="subscribe-header text-center pb-3">
+            <h3 class="section-title text-uppercase">Kritik Dan Saran</h3>
+                      </div>
+          <form id="telegramForm" class="d-flex flex-wrap gap-2">
+            <input type="text" name="message" placeholder="Kritik atau saran" class="form-control form-control-lg mb-2" required>
+            <div id="formResponse" class="w-100 text-center mb-2"></div>
+            <button type="submit" class="btn btn-dark btn-lg text-uppercase w-100">
+              <span id="submitText">Kirim</span>
+              <span id="loadingSpinner" class="spinner-border spinner-border-sm d-none" role="status"></span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <script>
+  document.getElementById('telegramForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const form = e.target;
+    const responseDiv = document.getElementById('formResponse');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const submitText = document.getElementById('submitText');
+    const spinner = document.getElementById('loadingSpinner');
+    
+    // Show loading state
+    submitText.textContent = 'Mengirim...';
+    spinner.classList.remove('d-none');
+    submitBtn.disabled = true;
+    
+    // Get form data
+    const formData = new FormData(form);
+    const data = {
+       message: formData.get('message')
+    };
+    
+    // Replace with your actual Telegram bot token and chat ID
+    const botToken = '8159931888:AAElzdYeVoD9Bi8u9J6r1Imab0E02fS7XuA';
+    const chatId = '7467359861';
+    
+    // Format message for Telegram
+    const telegramMessage = `📝 *Kritik & Saran Baru* \n\n` +
+                                                   `📄 *Pesan*: ${data.message}\n\n` +
+                           `🕒 ${new Date().toLocaleString()}`;
+    
+    // Send to Telegram via API
+    fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        chat_id: chatId,
+        text: telegramMessage,
+        parse_mode: 'Markdown'
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.ok) {
+        responseDiv.innerHTML = '<div class="alert alert-success">Pesan berhasil terkirim! Terima kasih atas masukan Anda.</div>';
+        form.reset();
+      } else {
+        throw new Error('Gagal mengirim pesan');
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      responseDiv.innerHTML = '<div class="alert alert-danger">Gagal mengirim pesan. Silakan coba lagi nanti.</div>';
+    })
+    .finally(() => {
+      submitText.textContent = 'Kirim';
+      spinner.classList.add('d-none');
+      submitBtn.disabled = false;
+    });
+  });
+  </script>
+  
+  <style>
+  #loadingSpinner {
+    vertical-align: middle;
+    margin-left: 8px;
+  }
+  .alert {
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+  }
+  </style>
+
+  
+
+  <footer id="footer" class="mt-5">
+    <div class="container">
+      <div class="row d-flex flex-wrap justify-content-between py-5">
+        <div class="col-md-3 col-sm-6">
+          <div class="footer-menu footer-menu-001">
+            <div class="footer-intro mb-4">
+              <a href="index.html">
+                <img width="130" height="55" viewBox="0 0 130 55" src="images/main-logo.png" alt="logo">
+              </a>
+            </div>
+            <p>Media informasi yang menyampaikan berbagai pengetahuan seputar sunnah khususnya diarea pulau Batam.</p>
+            <div class="social-links">
+              <ul class="list-unstyled d-flex flex-wrap gap-3">
+                <li>
+            
+                  <a href="https://www.instagram.com/batam.mengaji/" class="text-secondary" target="_blank" rel="noopener noreferrer">
+                    <svg width="24" height="24" viewBox="0 0 24 24">
+                      <use xlink:href="#instagram"></use>
+                    </svg>
+                  </a>
+                  
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+       
+
+        <div class="col-md-4 col-sm-10">
+          <div class="footer-menu footer-menu-004 border-animation-left">
+            <h5 class="widget-title text-uppercase mb-4">Join WhatsApp Group</h5>
+            <p>Grup WhatsApp Ikhwan: 
+              <a href="https://chat.whatsapp.com/CE7yzSKfP3T40iCiZTjoNU" class="item-anchor" target="_blank">
+                Klik di sini
+              </a>
+            </p>
+            <p>Grup WhatsApp Akhwat: 
+              <a href="https://chat.whatsapp.com/I9zvZQNDCTJ5qTGQHkOvtr" class="item-anchor" target="_blank">
+                Klik di sini
+              </a>
+            </p>
+          </div>
+        </div>
+        
+
+
+          <div class="col-md-7 text-end">
+            <p>©Copyright 2023 Batam Mengaji.</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/SmoothScroll.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="js/script.min.js"></script>
 </body>
+
 </html>
