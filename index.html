@@ -788,6 +788,102 @@
                 </div>
               </div>
             </div>
+
+<div class="swiper-slide">
+  <div class="banner-item image-zoom-effect">
+    <div class="image-holder">
+      <a href="#">
+        <img src="images/pontrenis.PNG" alt="product" class="img-fluid">
+      </a>
+    </div>
+    <div class="banner-content py-4">
+      <h5 class="element-title text-uppercase">
+        <a href="index.html" class="item-anchor">Masjid Ebad-Ur-Rahman Pontrenis</a>
+      </h5>
+      <div class="kajian-pontrenis">
+        <h5 id="judul-kajian-pontrenis">Jadwal Kajian Hari Ini</h5>
+        <button id="tombol-jadwal-pontrenis" onclick="toggleJadwalPontrenis()" class="btn btn-sm btn-secondary">Lihat Jadwal</button>
+        <p id="deskripsi-kajian-pontrenis" style="display: none;">Memuat jadwal...</p>
+      </div>
+
+
+<script>
+  const jadwalPontrenis = {
+    0: [ // Ahad
+      "Kajian Ba'da Subuh<br>Akidah & Akhlak Kitab Al Kabair<br>Ustadz Wildan Siregar, S.Kom.I, M.A – hafizahullah",
+      "Kajian Sore 17:00<br>Fiqh Muslimah (Khusus Akhwat)<br>Ustadz Raihan, B.A, M.Pd – hafizahullah"
+    ],
+    1: [ // Senin
+      "Kajian Ba'da Maghrib<br>Hadits Kitab Riyadhus Shalihin<br>Ustadz Abu Fairuz Ahmad Ridwan, Lc., M.A – hafizahullah"
+    ],
+    2: [ // Selasa
+      "Kajian Ba'da Maghrib<br>Manhaj Kitab At Tamassuk Bis Sunnah<br>Ustadz Muhammad Arif – hafizahullah"
+    ],
+    3: [ // Rabu
+      "Kajian Ba'da Maghrib<br>Tafsir Al Qur'an<br>Ustadz Abu Humairah (Ajat) – hafizahullah"
+    ],
+    4: [ // Kamis
+      "Kajian Ba'da Maghrib<br>Fiqh Hadits Kitab Umdatul Ahkam<br>Ustadz Bukhari Ibrahim, Lc – hafizahullah"
+    ],
+    5: [ // Jumat
+      "Kajian Ba'da Maghrib<br>Sirah Nabawiyah Raudhatul Anwal<br>Ustadz Yahya Tohari, S.H., M.M., M.A – hafizahullah"
+    ],
+    6: [ // Sabtu
+      "Kajian Ba'da Maghrib<br>Adab Adab Mufrad<br>Ustadz Raihan, B.A, M.Pd – hafizahullah"
+    ]
+  };
+
+  document.addEventListener('DOMContentLoaded', function() {
+    try {
+      const hariIni = new Date().getDay();
+      const elemenPontrenis = document.getElementById("deskripsi-kajian-pontrenis");
+      
+      if (elemenPontrenis && jadwalPontrenis[hariIni]) {
+        elemenPontrenis.innerHTML = jadwalPontrenis[hariIni].join("<br><br>");
+      } else {
+        elemenPontrenis.innerHTML = "Tidak ada kajian rutin hari ini";
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      document.getElementById("deskripsi-kajian-pontrenis").innerHTML = 
+        "Gagal memuat jadwal. Silakan refresh halaman.";
+    }
+  });
+
+function toggleJadwalPontrenis() {
+    const deskripsiElemen = document.getElementById("deskripsi-kajian-pontrenis");
+    const tombol = document.getElementById("tombol-jadwal-pontrenis");
+    
+    if (deskripsiElemen.style.display === "none") {
+        deskripsiElemen.style.display = "block";
+        tombol.textContent = "Sembunyikan Jadwal";
+    } else {
+        deskripsiElemen.style.display = "none";
+        tombol.textContent = "Lihat Jadwal";
+    }
+}
+</script>
+
+
+
+<div class="btn-left">
+  <a href="https://www.youtube.com/@PontrenisBatam/streams" target="_blank" class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+    Ikuti Kajian Live
+  </a>
+
+  <br>
+                    
+  <!-- Location link -->
+  <a href="https://maps.app.goo.gl/fm9H7uCAfbmw2SxC7" 
+     target="_blank" 
+     class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+      LOKASI
+  </a>
+</div>
+</div>
+</div>
+</div>
+
             <div class="swiper-slide">
               <div class="banner-item image-zoom-effect">
                 <div class="image-holder">
@@ -907,6 +1003,9 @@
 </div>
 </div>
 </div>
+
+
+
 <div class="swiper-pagination"></div>
 </div>
 <div class="icon-arrow icon-arrow-left"><svg width="50" height="50" viewBox="0 0 24 24">
@@ -1016,6 +1115,19 @@
       </a>
     </div>
 
+     <!-- Feature 8-->
+    <div class="swiper-slide elegant-slide">
+      <a href="images/jadwal-pontrenis.jpg" target="_blank" class="slide-link">
+        <div class="slide-content">
+          <svg width="38" height="38" viewBox="0 0 24 24">
+            <use xlink:href="#calendar"></use>
+          </svg>
+          <h4>Masjid Ebad-Ur-Rahman Pontrenis Batam</h4>
+          <p>Klik untuk lihat jadwal lengkap kajian.</p>
+        </div>
+      </a>
+    </div>
+
 </section>
 
 <script>
@@ -1085,6 +1197,28 @@
               <div class="image-holder position-relative">
                 <a href="images/jariah-sntv.PNG" download="jariah-sntv.PNG">
                   <img src="images/jariah-sntv.PNG" alt="categories" class="product-image img-fluid" style="width: 500px; height: 300px; object-fit: cover;">
+                </a>
+                <a href="index.html" class="btn-icon btn-wishlist">
+                  <svg width="24" height="24" viewBox="0 0 24 24">
+                    <use xlink:href="#heart"></use>
+                  </svg>
+                </a>
+                <div class="product-content">
+                  <h5 class="element-title text-uppercase fs-5 mt-3">
+                    <a href="index.html"></a>
+                  </h5>
+                  <a href="#" class="text-decoration-none"><span></span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="swiper-slide">
+            <div class="product-item image-zoom-effect link-effect">
+              <div class="image-holder position-relative">
+                <a href="images/jariah-pontrenis.PNG" download="jariah-pontrenis.PNG">
+                  <img src="images/jariah-pontrenis.PNG" alt="categories" class="product-image img-fluid" style="width: 500px; height: 300px; object-fit: cover;">
                 </a>
                 <a href="index.html" class="btn-icon btn-wishlist">
                   <svg width="24" height="24" viewBox="0 0 24 24">
