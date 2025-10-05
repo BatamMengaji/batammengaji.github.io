@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Soon Yaa . . .</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    h1 {
+      font-size: 5rem;
+      color: #333;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Soon Yaa . . .</h1>
+</body>
+</html>
+
+
+<!-- SVG symbols definition 
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <defs>
+    <symbol id="user" viewBox="0 0 24 24">
+      <path fill="currentColor"
+        d="M15.71 12.71a6 6 0 1 0-7.42 0a10 10 0 0 0-6.22 8.18a1 1 0 0 0 2 .22a8 8 0 0 1 15.9 0a1 1 0 0 0 1 .89h.11a1 1 0 0 0 .88-1.1a10 10 0 0 0-6.25-8.19ZM12 12a4 4 0 1 1 4-4a4 4 0 0 1-4 4Z" />
+    </symbol>
+  </defs>
+</svg>
+-->
+
+
+<!-- Konten Form 
+ 
+<div class="form-page-bg">
+  <div class="form-page-container">
+       <div style="width:100%; display:flex; justify-content:center; align-items:center; margin-bottom:8px;">
+  <a class="navbar-brand text-white" href="index.html" style="display:inline-block;">
+    <img src="images/logo.png" width="130" height="55" alt="Logo" style="display:block; margin:auto;">
+  </a>
+</div>
+    <h2 class="popup-title">
+       <span style="color:#16a085;">🕌</span>
+      Form Partisipasi Postingan Instagram
+                 </h2>
+              
+   
+
+    <p class="form-desc">
+      Silakan kirim postingan bertema dakwah (foto atau video reels) untuk Instagram Batam Mengaji. Sertakan caption islami yang menarik serta referensi dari Qur'an, Hadits, atau kitab/ulama.<br>
+      <span style="color:#e67e22; font-weight:bold;">Semua data dan file akan dikirim langsung ke admin melalui Telegram dan diperiksa sebelum diposting.</span>
+    </p>
+    <form id="form-dakwah" enctype="multipart/form-data" autocomplete="off">
+      <div class="form-group">
+        <label for="nama">Nama Pengirim/Instagram Pengirim <span style="color:#e74c3c">*</span></label>
+        <input type="text" id="nama" name="nama" required placeholder="Nama lengkap atau nama komunitas">
+      </div>
+      <div class="form-group">
+        <label for="email">Email Pengirim <span style="color:#e74c3c">*</span></label>
+        <input type="email" id="email" name="email" required placeholder="Email aktif">
+      </div>
+      <div class="form-group">
+        <label for="jenis">Jenis Postingan <span style="color:#e74c3c">*</span></label>
+        <select id="jenis" name="jenis" required>
+          <option value="">Pilih jenis...</option>
+          <option value="foto">Foto</option>
+          <option value="reels">Video Reels</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="file">Upload Foto/Video <span style="color:#e74c3c">*</span></label>
+        <input type="file" id="file" name="file" accept="image/*,video/*" required>
+        <p class="note" style="color:#e67e22; font-size:0.98rem;">
+          <strong>Ketentuan File:</strong><br>
+          - Maksimal foto <b>5 MB</b>.<br>
+          - Maksimal video reels <b>50 MB</b>.<br>
+          - Format foto: JPG, PNG.<br>
+          - Format video: MP4, MOV, AVI (disarankan MP4).<br>
+          - Menggunakan logo Batam Mengaji.
+          <a href="images/light-logo.png" download="Logo-BatamMengaji.png" style="color:#138d75; text-decoration:underline;">
+      Download Disini...
+    </a><br>
+          - Jika file terlalu besar, upload ke Google Drive/Dropbox dan sertakan link pada caption.
+        </p>
+      </div>
+      <div class="form-group">
+        <label for="caption">Caption Instagram <span style="color:#e74c3c">*</span></label>
+        <textarea id="caption" name="caption" rows="2" required placeholder="Tulis caption islami yang menarik..."></textarea>
+      </div>
+      <div class="form-group">
+        <label for="referensi-quran">Referensi Qur'an <span style="color:#888;">(opsional)</span></label>
+        <input type="text" id="referensi-quran" name="referensi-quran" placeholder="Contoh: QS. Al-Baqarah: 183">
+      </div>
+      <div class="form-group">
+        <label for="referensi-hadits">Referensi Hadits <span style="color:#888;">(opsional)</span></label>
+        <input type="text" id="referensi-hadits" name="referensi-hadits" placeholder="Contoh: HR. Bukhari no. 1901">
+      </div>
+      <div class="form-group">
+        <label for="referensi-kitab">Referensi Kitab/Ulama <span style="color:#888;">(opsional)</span></label>
+        <input type="text" id="referensi-kitab" name="referensi-kitab" placeholder="Contoh: Tafsir Ibnu Katsir, Fiqh Sunnah, dll">
+      </div>
+      <div class="popup-actions">
+        <button type="submit" class="btn btn-primary">
+          <span id="submitText">Kirim untuk Diperiksa</span>
+          <span id="loadingSpinner" class="d-none">⏳</span>
+        </button>
+        <a href="index.html" class="btn btn-secondary" style="margin-left:12px;">Kembali</a>
+      </div>
+      <div id="formResponse"></div>
+      <p class="note">*Postingan akan diperiksa Ustadz Pembimbing sebelum dipublikasikan di Instagram Batam Mengaji.</p>
+    </form>
+  </div>
+</div>
+
+-->
+
+<!-- Style Modern & Islami 
+<style>
+.form-page-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e8f7f3 0%, #fdf6f0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-page-container {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(22,160,133,0.15);
+  padding: 32px 26px 20px 26px;
+  min-width: 320px;
+  max-width: 98vw;
+  width: 400px;
+}
+.popup-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #16a085;
+  margin-bottom: 16px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.form-desc {
+  margin-bottom: 18px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #138d75;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 7px;
+  border: 1.5px solid #16a085;
+  font-size: 1rem;
+  margin-bottom: 2px;
+  background: #f8f9f8;
+  color: #212529;
+  transition: border-color 0.2s;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #138d75;
+  outline: none;
+}
+.popup-actions {
+  text-align: center;
+  margin-top: 18px;
+}
+.note {
+  font-size: 0.95rem;
+  color: #888;
+  text-align: left;
+  margin-top: 8px;
+  font-style: italic;
+}
+.btn-primary {
+  background: #16a085;
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  cursor: pointer;
+  transition: background 0.2s;
+  display: inline-flex;
+  align-items: center;
+}
+.btn-primary:hover {
+  background: #138d75;
+}
+.btn-secondary {
+  background: #fff;
+  color: #16a085;
+  border: 2px solid #16a085;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 12px;
+  transition: background 0.2s;
+  display: inline-flex;
+  align-items: center;
+}
+.btn-secondary:hover {
+  background: #16a085;
+  color: #fff;
+}
+#loadingSpinner {
+  vertical-align: middle;
+  margin-left: 8px;
+}
+.alert {
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+</style>
+
+-->
+
+<!-- Script submit handler Telegram + Validasi File Size 
+<script>
+document.getElementById('form-dakwah').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const spinner = document.getElementById('loadingSpinner');
+  const submitText = document.getElementById('submitText');
+  const responseDiv = document.getElementById('formResponse');
+
+  // Get form data
+  const formData = new FormData(form);
+  const fileInput = form.querySelector('input[type="file"]');
+  const file = fileInput.files[0];
+  const jenis = formData.get('jenis');
+
+  // Client-side validation
+  if(jenis === 'foto' && file.size > 5 * 1024 * 1024) {
+    responseDiv.innerHTML = '<div class="alert alert-danger">Ukuran foto terlalu besar! Maksimal 5 MB.</div>';
+    return;
+  }
+  if(jenis === 'reels' && file.size > 50 * 1024 * 1024) {
+    responseDiv.innerHTML = '<div class="alert alert-danger">Ukuran video terlalu besar! Maksimal 50 MB.</div>';
+    return;
+  }
+
+  // Show loading state
+  submitText.textContent = 'Mengirim...';
+  spinner.classList.remove('d-none');
+  submitBtn.disabled = true;
+
+  // Telegram bot token dan chat ID
+  const botToken = '8159931888:AAElzdYeVoD9Bi8u9J6r1Imab0E02fS7XuA';
+  const chatId = '7467359861';
+
+  // Compose message for Telegram
+  const message = 
+    `🕌 *Partisipasi Postingan Dakwah Instagram*\n\n` +
+    `👤 Nama Pengirim: ${formData.get('nama')}\n` +
+    `✉️ Email: ${formData.get('email')}\n` +
+    `📌 Jenis Postingan: ${jenis}\n` +
+    `📝 Caption: ${formData.get('caption')}\n` +
+    (formData.get('referensi-quran') ? `📖 Qur'an: ${formData.get('referensi-quran')}\n` : "") +
+    (formData.get('referensi-hadits') ? `📜 Hadits: ${formData.get('referensi-hadits')}\n` : "") +
+    (formData.get('referensi-kitab') ? `📚 Kitab/Ulama: ${formData.get('referensi-kitab')}\n` : "") +
+    `🕒 ${new Date().toLocaleString()}`;
+
+  // Send text message first
+  fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      chat_id: chatId,
+      text: message,
+      parse_mode: 'Markdown'
+    })
+  })
+  .then(response => response.json())
+  .then(data => {
+    // After message text sent, send the file
+    const fileFormData = new FormData();
+    fileFormData.append('chat_id', chatId);
+
+    if(jenis === 'foto' && file.type.startsWith('image/')) {
+      fileFormData.append('photo', file);
+      return fetch(`https://api.telegram.org/bot${botToken}/sendPhoto`, {
+        method: 'POST',
+        body: fileFormData
+      });
+    } else if(jenis === 'reels' && file.type.startsWith('video/')) {
+      fileFormData.append('video', file);
+      return fetch(`https://api.telegram.org/bot${botToken}/sendVideo`, {
+        method: 'POST',
+        body: fileFormData
+      });
+    } else {
+      throw new Error("Tipe file tidak sesuai dengan jenis postingan!");
+    }
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.ok) {
+      responseDiv.innerHTML = '<div class="alert alert-success">Postingan berhasil terkirim! Terima kasih atas partisipasi Anda.</div>';
+      form.reset();
+    } else {
+      throw new Error('Gagal mengirim file');
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    responseDiv.innerHTML = '<div class="alert alert-danger">Gagal mengirim. Silakan coba lagi nanti.</div>';
+  })
+  .finally(() => {
+    submitText.textContent = 'Kirim untuk Diperiksa';
+    spinner.classList.add('d-none');
+    submitBtn.disabled = false;
+  });
+});
+</script>
+
+-->
