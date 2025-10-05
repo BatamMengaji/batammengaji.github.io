@@ -50,20 +50,35 @@
   </defs>
 </svg>
 
-<!-- Tombol di kanan atas -->
+
+<nav class="navbar navbar-expand-lg bg-light text-uppercase fs-6 p-3 border-bottom align-items-center">
+    <div class="container-fluid">
+      <div class="row justify-content-between align-items-center w-100">
+
+        <div class="col-auto">
+          <a class="navbar-brand text-white" href="index.html">
+            <img width="130" height="55" viewBox="0 0 130 55" src="images/logo.png">
+          </a>
+        </div>
+        </div>
+        
 <div id="partisipasi-postingan-btn">
-  <button type="button" class="btn btn-primary d-flex align-items-center justify-content-center" style="gap: 8px;">
-    <svg width="24" height="24">
-      <use xlink:href="#user"></use>
-    </svg>
-    Partisipasi Postingan (soon)
-  </button>
-</div> 
+            <button type="button" class="btn btn-primary d-flex align-items-center justify-content-center" style="gap: 4px;">
+                <svg width="24" height="24">
+                    <use xlink:href="#user"></use>
+                </svg>
+                
+                <span class="d-none d-lg-inline">Partisipasi Postingan (soon)</span>
+                
+                <span class="d-lg-none">Posting (soon)</span>
+                
+            </button>
+            </div>
 
 <!-- Style tombol kanan atas -->
 <style>
 #partisipasi-postingan-btn {
-  position: fixed;
+  position: absolute;
   top: 24px;
   right: 32px;
   z-index: 9999;
@@ -85,33 +100,20 @@
   background: #138d75;
 }
 </style>
-
-<!-- Script redirect -->
 <script>
 document.getElementById('partisipasi-postingan-btn').onclick = function() {
-  window.location.href = "form-dakwah.html";
+    window.location.href = "form-dakwah.html";
 };
 </script>
-    </div>
-  </div>    
 
-
-  <nav class="navbar navbar-expand-lg bg-light text-uppercase fs-6 p-3 border-bottom align-items-center">
-    <div class="container-fluid">
-      <div class="row justify-content-between align-items-center w-100">
-
-        <div class="col-auto">
-          <a class="navbar-brand text-white" href="index.html">
-            <img width="130" height="55" viewBox="0 0 130 55" src="images/logo.png">
-          </a>
-        </div>
-
+  <!--
         <div class="col-auto">
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
             aria-controls="offcanvasNavbar">
             <span class="navbar-toggler-icon"></span>
           </button>
 
+         Style tombol kanan atas 
           <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
             aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header">
@@ -129,7 +131,7 @@ document.getElementById('partisipasi-postingan-btn').onclick = function() {
             </li>
           </ul>
         </div>
-
+-->
       </div>
 
     </div>
