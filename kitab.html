@@ -139,6 +139,10 @@
 <!-- ================= GRID KITAB ================= -->
 <div class="container py-4">
   <div class="row" id="kitabList">
+<div id="noResult" class="text-center text-muted fw-semibold"
+     style="display:none; font-size:16px; padding:40px 0;">
+  📚 Kitab belum tersedia
+</div>
 
     <!-- CONTOH ITEM (nanti duplicate otomatis) -->
     <!-- Anda cukup edit daftar kitab di bagian JS -->
@@ -531,6 +535,35 @@ kitabData.forEach(k => {
 });
 
 </script>
+
+<script>
+const searchInput = document.getElementById("searchInput");
+const kitabItems = document.querySelectorAll(".kitab-item");
+const noResult = document.getElementById("noResult");
+
+/* 🔧 Fungsi normalize (LETTAKKAN DI SINI) */
+const normalize = text =>
+  text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+searchInput.addEventListener("input", function () {
+  const keyword = normalize(this.value.toLowerCase().trim());
+  let found = false;
+
+  kitabItems.forEach(item => {
+    const text = normalize(item.innerText.toLowerCase());
+
+    if (text.includes(keyword)) {
+      item.style.display = "";
+      found = true;
+    } else {
+      item.style.display = "none";
+    }
+  });
+
+  noResult.style.display = found ? "none" : "block";
+});
+</script>
+
 
 </body>
 </html>
