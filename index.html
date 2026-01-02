@@ -3,6 +3,7 @@
 
 <head>
   <title>Batam Mengaji</title>
+  <link rel="icon" type="image/png" href="images/logo.png">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,6 +24,7 @@
     href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Marcellus&display=swap"
     rel="stylesheet">
 
+    
     
 </head>
 
@@ -60,57 +62,103 @@
             <img width="130" height="55" viewBox="0 0 130 55" src="images/logo.png">
           </a>
         </div>
-        </div>
-        
-<div id="partisipasi-postingan-btn">
-            <button type="button" class="btn btn-primary d-flex align-items-center justify-content-center" style="gap: 4px;">
-                <svg width="24" height="24">
-                    <use xlink:href="#user"></use>
-                </svg>
-                
-                <span class="d-none d-lg-inline">Partisipasi Postingan (soon)</span>
-                
-                <span class="d-lg-none">Posting (soon)</span>
-                
-            </button>
-            </div>
+       
+<!-- Tombol Sidebar -->
+<div class="col-auto">
+  <span id="menuBtn" style="font-size:28px; cursor:pointer;">&#9776;</span>
+</div>
+<!-- Sidebar -->
+<div id="sidebarMenu" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" id="closeSidebar">&times;</a>
 
-<!-- Style tombol kanan atas -->
+  <a href="kitab.html">Kitab</a>
+  <a href="donatur.html">Daftar Jadi Donatur</a>
+</div>
+
+<!-- Overlay (gelap) -->
+<div id="overlayMenu" class="overlay"></div>
 <style>
-#partisipasi-postingan-btn {
+/* Sidebar */
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  right: 0; /* MUNCUL DARI KANAN */
+  background-color: #fefefe;
+  box-shadow: -3px 0 10px rgba(0,0,0,0.2);
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+  z-index: 3000;
+}
+
+/* Menu di dalam sidebar */
+.sidebar a {
+  padding: 12px 25px;
+  text-decoration: none;
+  font-size: 14px;
+  color: #333;
+  display: block;
+  transition: 0.2s;
+  font-family: 'Jost', sans-serif;
+}
+
+.sidebar a:hover {
+  background: #f2f2f2;
+}
+
+/* Tombol close */
+.closebtn {
   position: absolute;
-  top: 24px;
-  right: 32px;
-  z-index: 9999;
+  top: 10px;
+  right: 20px;
+  font-size: 40px;
 }
-.btn-primary {
-  background: #16a085;
-  color: #fff;
-  border: none;
-  font-size: 1rem;
-  padding: 10px 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-  cursor: pointer;
-  transition: background 0.2s;
-  display: flex;
-  align-items: center;
-}
-.btn-primary:hover {
-  background: #138d75;
+
+/* Overlay hitam saat menu muncul */
+.overlay {
+  position: fixed;
+  display: none;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 2000;
+  transition: 0.3s;
 }
 </style>
 <script>
-document.getElementById('partisipasi-postingan-btn').onclick = function() {
-    window.location.href = "form-dakwah.html";
-};
+const sidebar = document.getElementById("sidebarMenu");
+const overlay = document.getElementById("overlayMenu");
+const btn = document.getElementById("menuBtn");
+const closeBtn = document.getElementById("closeSidebar");
+
+btn.addEventListener("click", () => {
+  sidebar.style.width = "260px";
+  overlay.style.display = "block";
+});
+
+closeBtn.addEventListener("click", () => {
+  sidebar.style.width = "0";
+  overlay.style.display = "none";
+});
+
+// Jika klik area gelap → tutup
+overlay.addEventListener("click", () => {
+  sidebar.style.width = "0";
+  overlay.style.display = "none";
+});
 </script>
 
- 
-      </div>
+
+
 
     </div>
-  </nav>
+  </div>
+</nav>
+
+        
+</nav>
 
   <section id="billboard" class="bg-light py-5">
     <div class="container">
@@ -1548,7 +1596,7 @@ function toggleJadwalPontrenis() {
                 <img width="130" height="55" viewBox="0 0 130 55" src="images/main-logo.png" alt="logo">
               </a>
             </div>
-            <p>Media informasi yang menyampaikan berbagai pengetahuan seputar sunnah khususnya diarea pulau Batam.</p>
+            <p>Media informasi yang menyampaikan berbagai pengetahuan seputar sunnah khususnya diarea pulau Batam dengan Ustadz pembimbing Al-Ustadz Rahmat Nur Hidayat hafidzahullah</p>
             <div class="social-links">
               <ul class="list-unstyled d-flex flex-wrap gap-3">
                 <li>
@@ -1585,7 +1633,7 @@ function toggleJadwalPontrenis() {
 
 
           <div class="col-md-7 text-end">
-            <p>©Copyright 2023 Batam Mengaji.</a></p>
+            <p>©Since 2023 Batam Mengaji.</a></p>
           </div>
         </div>
       </div>

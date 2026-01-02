@@ -41,7 +41,7 @@ body {
   --bs-primary: #8C907E;
   --bs-secondary: #6c757d;
   --bs-black: #111;
-  --bs-light: #F1F1F0;
+  --bs-light: hwb(60 94% 5%);
   --bs-dark: #212529;
   --bs-gray: #9aa1a7;
   --bs-gray-dark: #51565b;
@@ -1703,3 +1703,4 @@ a.btn-link.text-light:after {
   border-radius: 12px;     /* Opsional: sudut membulat */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Opsional: bayangan */
 }
+
