@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Rekomendasi Masjid</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font -->
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- Leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+<style>
+body{
+  font-family:'Jost',sans-serif;
+  background:#f5f6f7;
+}
+
+/* Header */
+.page-title{
+  text-align:center;
+  padding:20px 10px;
+}
+.page-title h4{
+  font-weight:600;
+}
+
+/* Map */
+#map{
+  height:75vh;
+  border-radius:14px;
+  box-shadow:0 8px 20px rgba(0,0,0,.25);
+}
+
+/* Popup */
+.popup-title{
+  font-weight:600;
+  font-size:14px;
+}
+.popup-address{
+  font-size:12px;
+  color:#555;
+  margin:6px 0;
+}
+.btn-route{
+  font-size:12px;
+  padding:6px 12px;
+  border-radius:20px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar bg-light border-bottom p-3">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">
+      <img src="images/logo.png" alt="Batam Mengaji"
+           style="height:65px;">
+    </a>
+  </div>
+</nav>
+
+</nav>
+
+<div class="container py-3">
+  <div class="page-title">
+    <h4>🕌 Rekomendasi Masjid Area Batam</h4>
+    <small class="text-muted">Klik marker untuk navigasi</small>
+  </div>
+
+  <div id="map"></div>
+</div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+/* ================= MAP INIT ================= */
+const map = L.map('map').setView([1.075, 104.03], 11);
+
+/* ===== SATELLITE LAYER ===== */
+L.tileLayer(
+  'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+  {
+    attribution: 'Tiles © Esri'
+  }
+).addTo(map);
+
+/* ================= MASJID DATA (AKURAT) ================= */
+const masjidList = [
+  {
+    nama:"Masjid Nurul Hidayah",
+    lat:1.0503222554366942,
+    lng:103.96359938182954
+  },
+  {
+    nama:"Masjid Darussakinah",
+    lat:1.1585194416358318,
+    lng:104.13616463423557
+  },
+  {
+    nama:"Masjid Hang",
+    lat:1.1029014474641625,
+    lng:104.06256578176576
+  },
+  {
+    nama:"Masjid Sabiilun Najaah",
+    lat:1.0412490954215525,
+    lng:103.98649737300981
+  },
+  {
+    nama:"Masjid Al Kahfi",
+    lat:1.1182678462591396,
+    lng:104.02514095524639
+  },
+  {
+    nama:"Masjid Al Amin",
+    lat:1.0240611764231438,
+    lng:104.06050977846432
+  },
+  {
+    nama:"Masjid Ebad Ur Rahman PONTRENIS",
+    lat:1.0428748058842907,
+    lng:103.94298632883499
+  },
+  {
+    nama:"Masjid Jabal Rahmah",
+    lat:1.1444813986181943,
+    lng:104.0400696662978
+  },
+  {
+    nama:"Masjid Nidaul Ilmi",
+    lat:1.1025486238373352,
+    lng:103.94221562153554
+  }
+];
+
+/* ================= MARKER ================= */
+masjidList.forEach(m => {
+  const linkMaps =
+    `https://www.google.com/maps/dir/?api=1&destination=${m.lat},${m.lng}`;
+
+  L.marker([m.lat, m.lng]).addTo(map)
+    .bindPopup(`
+      <div class="popup-title">${m.nama}</div>
+      <a href="${linkMaps}" target="_blank"
+         class="btn btn-success btn-sm btn-route mt-2">
+         📍 Buka Rute
+      </a>
+    `);
+});
+</script>
+
+</body>
+</html>
