@@ -253,12 +253,27 @@ function closeSidebar() {
                   
                   <div class="btn-left">
                     <!-- Link to follow live studies on YouTube -->
-                    <a href="https://www.youtube.com/@MasjidDarussakinahBatam/streams" 
-                       target="_blank" 
-                       class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
-                        Ikuti Kajian Live
+                    <a id="link-kajian-darussakinah"
+                      href="https://www.youtube.com/@MasjidDarussakinahBatam/streams"
+                      target="_blank"
+                      class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+                      Ikuti Kajian Live
                     </a>
-                    
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function () {
+                          const hariIni = new Date().getDay(); 
+                          // 0=Ahad, 1=Senin, 2=Selasa, 3=Rabu, 4=Kamis, 5=Jumat, 6=Sabtu
+
+                          const link = document.getElementById("link-kajian-darussakinah");
+
+                          if (hariIni === 5) {
+                            link.style.pointerEvents = "none";
+                            link.style.opacity = "0.6";
+                            link.textContent = "Kajian Live Tidak Tersedia Hari Ini";
+                          }
+
+                        });
+                      </script>                   
                     <!-- Line break to separate the links -->
                     <br>
                     
@@ -272,6 +287,8 @@ function closeSidebar() {
                 </div>
               </div>
             </div>
+
+            
             <div class="swiper-slide">
               <div class="banner-item image-zoom-effect">
                 <div class="image-holder">
@@ -298,13 +315,13 @@ function closeSidebar() {
                             "Kajian Ba'da Maghrib<br>Bahjatul Qulubul Abrar<br>Ustadz Ahmad Wahib B.A – hafidzahullah"
                         ],
                         2: [ // Selasa
-                            "Belum ada jadwal kajian rutin"
+                            "Belum ada jadwal kajian rutin untuk hari ini"
                         ],
                         3: [ // Rabu
-                            "Belum ada jadwal kajian rutin"
+                            "Belum ada jadwal kajian rutin untuk hari ini"
                         ],
                         4: [ // Kamis
-                            "Belum ada jadwal kajian rutin"
+                            "Belum ada jadwal kajian rutin untuk hari ini"
                         ],
                         5: [ // Jumat
                             "Kajian Ba'da Maghrib<br>Manhajus Salaf fii Tazkiyyatin Nufu<br>Ustadz Rahmat Nur Hidayat – hafidzahullah"
@@ -348,11 +365,29 @@ function closeSidebar() {
                 </script>
                   
                   <div class="btn-left">
-                    <a href="https://www.instagram.com/ngaji_.yuk/" target="_blank" class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
-                      Ikuti Kajian Live
-                    </a>
+                    <a id="link-kajian-instagram"
+                    href="https://www.youtube.com/@nurulhidayah-puskopkar/streams"
+                    target="_blank"
+                    class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+                    Ikuti Kajian Live
+                  </a>
+                   <script>
+                  document.addEventListener('DOMContentLoaded', function () {
+                    const hariIni = new Date().getDay();
+                    // 0=Ahad, 1=Senin, 2=Selasa, 3=Rabu, 4=Kamis, 5=Jumat, 6=Sabtu
 
-                    <br>
+                    const link = document.getElementById("link-kajian-instagram");
+
+                    // Selasa (2), Rabu (3), Kamis (4)
+                    if ([2, 3, 4].includes(hariIni)) {
+                      link.style.pointerEvents = "none";
+                            link.style.opacity = "0.6";
+                            link.textContent = "Kajian Live Tidak Tersedia Hari Ini";
+                          
+                    }
+                  });
+                </script>
+                <br>
                     
                     <!-- Location link -->
                     <a href="https://maps.app.goo.gl/Eu1bmfN28UwYF91i9" 
@@ -360,11 +395,99 @@ function closeSidebar() {
                        class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
                         LOKASI
                     </a>
-              
                   </div>
                 </div>
               </div>
             </div>
+
+
+            <div class="swiper-slide">
+  <div class="banner-item image-zoom-effect">
+    <div class="image-holder">
+      <a href="#">
+        <img src="images/masjid-alfajri.JPG" alt="Masjid Al Fajri Batam" class="img-fluid">
+      </a>
+    </div>
+
+    <div class="banner-content py-4">
+      <h5 class="element-title text-uppercase">
+        <a href="index.html" class="item-anchor">Masjid Al Fajri Batam</a>
+      </h5>
+
+      <div class="kajian-alfajri">
+        <h5 id="judul-kajian-alfajri">Jadwal Kajian Hari Ini</h5>
+
+        <button id="tombol-jadwal-alfajri"
+          onclick="toggleJadwalAlFajri()">
+          Lihat Jadwal
+        </button>
+
+        <div id="deskripsi-kajian-alfajri" style="display:none;"></div>
+      </div>
+
+      <script>
+        const jadwalAlFajri = {
+          0: ["Ba'da Dzuhur<br>Taksin Qur'an (Khusus Akhwat)<br>Ustadzah Ummu Amalia"],
+
+          1: ["Kajian Ba'da Maghrib<br>Shahih Al Adab Al Islami<br>Ustadz Ibnu Suwiryo – hafidzahullah",
+              "Kajian Ba'da Isya<br>Muktarot (Bahasa Arab)<br>Ustadz Abu Ahmad – hafidzahullah"],
+
+          2: ["Kajian Ba'da Maghrib<br>Shahih Al Adab Al Islami<br>Ustadz Ibnu Suwiryo – hafidzahullah",
+              "Kajian Ba'da Isya<br>Maajhayuhibbullahu Wa Maajha Yubghidu<br>Ustadz Mardoni – hafidzahullah"],
+
+          3: ["Kajian Ba'da Isya<br>Fikih Asmaul Husna<br>Ustadz Rahmat Nur Hidayat – hafidzahullah"],
+
+          4: ["Kajian Ba'da Isya<br>Sirah Nabawiyah<br>Ustadz Abu Humairoh – hafidzahullah"],
+
+          5: ["Kajian Ba'da Isya<br>Mukhtasharul Kalam ala Bulugh Al Maram<br>Ustadz Muhammad Su'ib – hafidzahullah"],
+
+          6: ["Kajian Ba'da Isya<br>Muktarot (Bahasa Arab)<br>Ustadz Abu Ahmad – hafidzahullah"]
+        };
+
+        document.addEventListener('DOMContentLoaded', function () {
+          const hariIni = new Date().getDay();
+          const elemen = document.getElementById("deskripsi-kajian-alfajri");
+
+          if (elemen) {
+            elemen.innerHTML =
+              jadwalAlFajri[hariIni]?.join("<br><br>") ||
+              "Tidak ada kajian hari ini";
+          }
+        });
+
+        function toggleJadwalAlFajri() {
+          const deskripsi = document.getElementById("deskripsi-kajian-alfajri");
+          const tombol = document.getElementById("tombol-jadwal-alfajri");
+
+          if (deskripsi.style.display === "none") {
+            deskripsi.style.display = "block";
+            tombol.textContent = "Sembunyikan Jadwal";
+          } else {
+            deskripsi.style.display = "none";
+            tombol.textContent = "Lihat Jadwal";
+          }
+        }
+      </script>
+
+      <div class="btn-left">
+        <a href="https://www.youtube.com/@ilyas_abu_ridwan_5815/streams"
+           target="_blank"
+           class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+          Ikuti Kajian Live
+        </a>
+
+        <br>
+
+        <a href="https://maps.app.goo.gl/fqGp9vgTeFBzbwsf6"
+           target="_blank"
+           class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+          LOKASI
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
 
             <div class="swiper-slide">
               <div class="banner-item image-zoom-effect">
@@ -529,21 +652,20 @@ function closeSidebar() {
           }
       });
   
-      function toggleJadwalSabiil() {
-          const deskripsiElemen = document.getElementById("deskripsi-kajian-sabiil");
-          const tombol = document.getElementById("tombol-jadwal-sabiil");
-          
-          if (deskripsiElemen.style.display === "none") {
-              deskripsiElemen.style.display = "block";
-              tombol.textContent = "Sembunyikan Jadwal";
-          } else {
-              deskripsiElemen.style.display = "none";
-              tombol.textContent = "Lihat Jadwal";
-          }
-      }
-  </script>
+              function toggleJadwalSabiil() {
+                  const deskripsiElemen = document.getElementById("deskripsi-kajian-sabiil");
+                  const tombol = document.getElementById("tombol-jadwal-sabiil");
                   
-                  
+                  if (deskripsiElemen.style.display === "none") {
+                      deskripsiElemen.style.display = "block";
+                      tombol.textContent = "Sembunyikan Jadwal";
+                  } else {
+                      deskripsiElemen.style.display = "none";
+                      tombol.textContent = "Lihat Jadwal";
+                  }
+              }
+                </script>
+                                    
                   <div class="btn-left">
                     <a href="https://www.youtube.com/@sntivi/streams" target="_blank" class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
                       Ikuti Kajian Live  </a>
@@ -560,6 +682,8 @@ function closeSidebar() {
                 </div>
               </div>
             </div>
+
+
             <div class="swiper-slide">
               <div class="banner-item image-zoom-effect">
                 <div class="image-holder">
@@ -580,8 +704,7 @@ function closeSidebar() {
                 <script>
                     const jadwalAlkahfi = {
                         0: [ // Ahad
-                            "Kajian Ba'da Subuh<br>Belum tersedia",
-                            "Kajian Ba'da Maghrib<br>Belum tersedia"
+                            "Belum ada jadwal kajian rutin untuk hari ini."
                         ],
                         1: [ // Senin
                             "Kajian Ba'da Subuh<br>Belum tersedia",
@@ -643,10 +766,28 @@ function closeSidebar() {
                 </script>
                 
                 <div class="btn-left">
-                    <a href="https://www.youtube.com/@Masjidalkahfibatam/streams" target="_blank" class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
-                      Ikuti Kajian Live
-                      <br>
-                    
+                    <a id="link-kajian-alkahfi"
+                    href="https://www.youtube.com/@Masjidalkahfibatam/streams"
+                    target="_blank"
+                    class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+                    Ikuti Kajian Live
+                  </a>
+                  <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                      const hariIni = new Date().getDay();
+                      // 0 = Ahad, 1 = Senin, ..., 6 = Sabtu
+
+                      const link = document.getElementById("link-kajian-alkahfi");
+
+                      if (hariIni === 0) {
+                        link.style.pointerEvents = "none";
+                        link.style.opacity = "0.5";
+                        link.textContent = "Kajian Live Tidak Tersedia Hari Ini";
+                      }
+
+                    });
+                  </script>
+                   <br>
                       <!-- Location link -->
                       <a href="https://maps.app.goo.gl/RXJXpVyfaodooBfN8" 
                          target="_blank" 
@@ -654,9 +795,116 @@ function closeSidebar() {
                           LOKASI
                       </a>
                     </div>
-                </div>
+                     </div>
               </div>
-            </div>
+            </div> 
+          
+
+<div class="swiper-slide">
+  <div class="banner-item image-zoom-effect">
+    <div class="image-holder">
+      <a href="#">
+        <img src="images/masjid-nidaulilmi.JPG" alt="product" class="img-fluid">
+      </a>
+    </div>
+
+    <div class="banner-content py-4">
+      <h5 class="element-title text-uppercase">
+        <a href="index.html" class="item-anchor">Masjid Nidaul Ilmi</a>
+      </h5>
+
+      <div class="kajian-nidaulilmi">
+        <h5 id="judul-kajian-nidaulilmi">Jadwal Kajian Hari Ini</h5>
+        <button id="tombol-jadwal-nidaulilmi" onclick="toggleJadwalnidaulilmi()">Lihat Jadwal</button>
+        <div id="deskripsi-kajian-nidaulilmi" style="display: none;"></div>
+      </div>
+
+      <script>
+        const jadwalnidaulilmi = {
+          0: [ // Ahad
+            "Kajian Malam Ahad Ba'da Isya<br>Siroh Nabawi<br>Ustadz Abu Humairoh – hafidzahullah"
+          ],
+          1: [ // Senin
+            "Belum ada jadwal kajian rutin untuk hari ini."
+          ],
+          2: [ // Selasa
+            "Belum ada jadwal kajian rutin untuk hari ini."
+          ],
+          3: [ // Rabu
+            "Kajian Khusus Ummahat<br>Pukul 10.00 WIB",
+            "Kajian Malam Rabu<br>Ustadz Bukhori<br>Ba'da Maghrib (Tahsin)<br>Ba'da Isya (Bahasa Arab)"
+          ],
+          4: [ // Kamis
+            "Belum ada jadwal kajian rutin untuk hari ini."
+          ],
+          5: [ // Jumat
+            "Belum ada jadwal kajian rutin untuk hari ini."
+          ],
+          6: [ // Sabtu
+            "Belum ada jadwal kajian rutin untuk hari ini."
+          ]
+        };
+
+        const linkKajianPerHari = {
+          0: "https://www.youtube.com/@masjidnidaulilmibatam6900/streams", // Ahad
+          3: "https://www.youtube.com/@masjidnidaulilmibatam6900/streams"  // Rabu
+        };
+
+        document.addEventListener('DOMContentLoaded', function () {
+          const hariIni = new Date().getDay();
+          const elemen = document.getElementById("deskripsi-kajian-nidaulilmi");
+          const linkKajian = document.getElementById("link-kajian-nidaulilmi");
+
+          if (elemen && jadwalnidaulilmi[hariIni]) {
+            elemen.innerHTML = jadwalnidaulilmi[hariIni].join("<br><br>");
+          }
+
+          // tampilkan link hanya di hari kajian
+          if (linkKajianPerHari[hariIni]) {
+            linkKajian.href = linkKajianPerHari[hariIni];
+          } else {
+            link.style.pointerEvents = "none";
+          link.style.opacity = "0.5";
+          link.textContent = "Kajian Live Tidak Tersedia Hari Ini";
+          }
+        });
+
+        function toggleJadwalnidaulilmi() {
+          const deskripsiElemen = document.getElementById("deskripsi-kajian-nidaulilmi");
+          const tombol = document.getElementById("tombol-jadwal-nidaulilmi");
+
+          if (deskripsiElemen.style.display === "none") {
+            deskripsiElemen.style.display = "block";
+            tombol.textContent = "Sembunyikan Jadwal";
+          } else {
+            deskripsiElemen.style.display = "none";
+            tombol.textContent = "Lihat Jadwal";
+          }
+        }
+      </script>
+
+      <div class="btn-left">
+        <a id="link-kajian-nidaulilmi"
+           href="#"
+           target="_blank"
+           class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+          Ikuti Kajian Live
+        </a>
+
+        <br>
+
+        <a href="https://maps.app.goo.gl/fb9hkoo8MWZw28oG6"
+           target="_blank"
+           class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+          LOKASI
+        </a>
+      </div>
+   </div>
+    </div>
+  </div>
+
+
+
             <div class="swiper-slide">
               <div class="banner-item image-zoom-effect">
                 <div class="image-holder">
@@ -754,101 +1002,564 @@ function closeSidebar() {
                 </div>
               </div>
             </div>
+            
 
-<div class="swiper-slide">
+
+
+            <div class="swiper-slide">
+              <div class="banner-item image-zoom-effect">
+                <div class="image-holder">
+                  <a href="#">
+                    <img src="images/pontrenis.PNG" alt="product" class="img-fluid">
+                  </a>
+                </div>
+
+                <div class="banner-content py-4">
+                  <h5 class="element-title text-uppercase">
+                    <a href="index.html" class="item-anchor">
+                      Masjid Ebad-Ur-Rahman
+                    </a>
+                  </h5>
+
+                  <div class="kajian-pontrenis">
+                    <h5 id="judul-kajian-pontrenis">Jadwal Kajian Hari Ini</h5>
+
+                    <button id="tombol-jadwal-pontrenis"
+                      onclick="toggleJadwalPontrenis()">
+                      Lihat Jadwal
+                    </button>
+
+                    <!-- DISAMAKAN: p -> div -->
+                    <div id="deskripsi-kajian-pontrenis" style="display:none;">
+                      Memuat jadwal...
+                    </div>
+                  </div>
+
+                  <script>
+                    const jadwalPontrenis = {
+                      0: [
+                        "Kajian Ba'da Subuh<br>Akidah & Akhlak Kitab Al Kabair<br>Ustadz Wildan Siregar, S.Kom.I, M.A – hafidzahullah",
+                        "Kajian Sore 17:00<br>Fiqh Muslimah (Khusus Akhwat)<br>Ustadz Raihan, B.A, M.Pd – hafidzahullah"
+                      ],
+                      1: [
+                        "Kajian Ba'da Maghrib<br>Hadits Kitab Riyadhus Shalihin<br>Ustadz Abu Fairuz Ahmad Ridwan, Lc., M.A – hafidzahullah"
+                      ],
+                      2: [
+                        "Kajian Ba'da Maghrib<br>Manhaj Kitab At Tamassuk Bis Sunnah<br>Ustadz Muhammad Arif – hafidzahullah"
+                      ],
+                      3: [
+                        "Kajian Ba'da Maghrib<br>Tafsir Al Qur'an<br>Ustadz Abu Humairah (Ajat) – hafidzahullah"
+                      ],
+                      4: [
+                        "Kajian Ba'da Maghrib<br>Fiqh Hadits Kitab Umdatul Ahkam<br>Ustadz Bukhari Ibrahim, Lc – hafidzahullah"
+                      ],
+                      5: [
+                        "Kajian Ba'da Maghrib<br>Sirah Nabawiyah Raudhatul Anwal<br>Ustadz Yahya Tohari, S.H., M.M., M.A – hafidzahullah"
+                      ],
+                      6: [
+                        "Kajian Ba'da Maghrib<br>Adab Adab Mufrad<br>Ustadz Raihan, B.A, M.Pd – hafidzahullah"
+                      ]
+                    };
+
+                    document.addEventListener('DOMContentLoaded', function () {
+                      const hariIni = new Date().getDay();
+                      const elemen = document.getElementById("deskripsi-kajian-pontrenis");
+
+                      if (elemen) {
+                        elemen.innerHTML =
+                          jadwalPontrenis[hariIni]?.join("<br><br>") ||
+                          "Tidak ada kajian rutin hari ini";
+                      }
+                    });
+
+                    function toggleJadwalPontrenis() {
+                      const deskripsi = document.getElementById("deskripsi-kajian-pontrenis");
+                      const tombol = document.getElementById("tombol-jadwal-pontrenis");
+
+                      if (deskripsi.style.display === "none") {
+                        deskripsi.style.display = "block";
+                        tombol.textContent = "Sembunyikan Jadwal";
+                      } else {
+                        deskripsi.style.display = "none";
+                        tombol.textContent = "Lihat Jadwal";
+                      }
+                    }
+                  </script>
+
+                  <div class="btn-left">
+                    <a href="https://www.youtube.com/@PontrenisBatam/streams"
+                      target="_blank"
+                      class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+                      Ikuti Kajian Live
+                    </a>
+
+                    <br>
+
+                    <a href="https://maps.app.goo.gl/fm9H7uCAfbmw2SxC7"
+                      target="_blank"
+                      class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+                      LOKASI
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="swiper-slide">
   <div class="banner-item image-zoom-effect">
     <div class="image-holder">
       <a href="#">
-        <img src="images/pontrenis.PNG" alt="product" class="img-fluid">
+        <img src="images/masjid-nuruliman.JPG" alt="product" class="img-fluid">
       </a>
     </div>
+
     <div class="banner-content py-4">
       <h5 class="element-title text-uppercase">
-        <a href="index.html" class="item-anchor">Masjid Ebad-Ur-Rahman Pontrenis</a>
+        <a href="index.html" class="item-anchor">
+          Masjid Nurul Iman
+        </a>
       </h5>
-      <div class="kajian-pontrenis">
-        <h5 id="judul-kajian-pontrenis">Jadwal Kajian Hari Ini</h5>
-        <button id="tombol-jadwal-pontrenis" onclick="toggleJadwalPontrenis()" class="btn btn-sm btn-secondary">Lihat Jadwal</button>
-        <p id="deskripsi-kajian-pontrenis" style="display: none;">Memuat jadwal...</p>
+
+      <div class="kajian-nuruliman">
+        <h5 id="judul-kajian-nuruliman">Jadwal Kajian Hari Ini</h5>
+
+        <button id="tombol-jadwal-nuruliman"
+          onclick="toggleJadwalNuruliman()">
+          Lihat Jadwal
+        </button>
+
+        <div id="deskripsi-kajian-nuruliman" style="display:none;">
+          Memuat jadwal...
+        </div>
       </div>
 
+      <script>
+        const jadwalNuruliman = {
+          0: [ // Minggu
+            "Ba'da Shubuh<br>Kitab Daaim Minhaaji Annubuwwah<br>Ustadz Mahmudi Arif Dahlan - Hafidzahullah"
+          ],
+          1: ["Belum ada jadwal kajian rutin untuk hari ini"], // Senin
+          2: ["Belum ada jadwal kajian rutin untuk hari ini"], // Selasa
+          3: ["Belum ada jadwal kajian rutin untuk hari ini"], // Rabu
+          4: ["Belum ada jadwal kajian rutin untuk hari ini"], // Kamis
+          5: ["Belum ada jadwal kajian rutin untuk hari ini"], // Jumat
+          6: ["Belum ada jadwal kajian rutin untuk hari ini"]  // Sabtu
+        };
 
-<script>
-  const jadwalPontrenis = {
-    0: [ // Ahad
-      "Kajian Ba'da Subuh<br>Akidah & Akhlak Kitab Al Kabair<br>Ustadz Wildan Siregar, S.Kom.I, M.A – hafidzahullah",
-      "Kajian Sore 17:00<br>Fiqh Muslimah (Khusus Akhwat)<br>Ustadz Raihan, B.A, M.Pd – hafidzahullah"
-    ],
-    1: [ // Senin
-      "Kajian Ba'da Maghrib<br>Hadits Kitab Riyadhus Shalihin<br>Ustadz Abu Fairuz Ahmad Ridwan, Lc., M.A – hafidzahullah"
-    ],
-    2: [ // Selasa
-      "Kajian Ba'da Maghrib<br>Manhaj Kitab At Tamassuk Bis Sunnah<br>Ustadz Muhammad Arif – hafidzahullah"
-    ],
-    3: [ // Rabu
-      "Kajian Ba'da Maghrib<br>Tafsir Al Qur'an<br>Ustadz Abu Humairah (Ajat) – hafidzahullah"
-    ],
-    4: [ // Kamis
-      "Kajian Ba'da Maghrib<br>Fiqh Hadits Kitab Umdatul Ahkam<br>Ustadz Bukhari Ibrahim, Lc – hafidzahullah"
-    ],
-    5: [ // Jumat
-      "Kajian Ba'da Maghrib<br>Sirah Nabawiyah Raudhatul Anwal<br>Ustadz Yahya Tohari, S.H., M.M., M.A – hafidzahullah"
-    ],
-    6: [ // Sabtu
-      "Kajian Ba'da Maghrib<br>Adab Adab Mufrad<br>Ustadz Raihan, B.A, M.Pd – hafidzahullah"
-    ]
-  };
+        document.addEventListener('DOMContentLoaded', function () {
+          const hariIni = new Date().getDay();
+          const elemen = document.getElementById("deskripsi-kajian-nuruliman");
 
-  document.addEventListener('DOMContentLoaded', function() {
-    try {
-      const hariIni = new Date().getDay();
-      const elemenPontrenis = document.getElementById("deskripsi-kajian-pontrenis");
-      
-      if (elemenPontrenis && jadwalPontrenis[hariIni]) {
-        elemenPontrenis.innerHTML = jadwalPontrenis[hariIni].join("<br><br>");
-      } else {
-        elemenPontrenis.innerHTML = "Tidak ada kajian rutin hari ini";
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      document.getElementById("deskripsi-kajian-pontrenis").innerHTML = 
-        "Gagal memuat jadwal. Silakan refresh halaman.";
-    }
-  });
+          if (elemen) {
+            elemen.innerHTML =
+              jadwalNuruliman[hariIni]?.join("<br><br>") ||
+              "Tidak ada kajian rutin hari ini";
+          }
+        });
 
-function toggleJadwalPontrenis() {
-    const deskripsiElemen = document.getElementById("deskripsi-kajian-pontrenis");
-    const tombol = document.getElementById("tombol-jadwal-pontrenis");
-    
-    if (deskripsiElemen.style.display === "none") {
-        deskripsiElemen.style.display = "block";
-        tombol.textContent = "Sembunyikan Jadwal";
-    } else {
-        deskripsiElemen.style.display = "none";
-        tombol.textContent = "Lihat Jadwal";
-    }
-}
-</script>
+        function toggleJadwalNuruliman() {
+          const deskripsi = document.getElementById("deskripsi-kajian-nuruliman");
+          const tombol = document.getElementById("tombol-jadwal-nuruliman");
 
+          if (deskripsi.style.display === "none") {
+            deskripsi.style.display = "block";
+            tombol.textContent = "Sembunyikan Jadwal";
+          } else {
+            deskripsi.style.display = "none";
+            tombol.textContent = "Lihat Jadwal";
+          }
+        }
+      </script>
 
+      <div class="btn-left">
+        <a href=" "
+          target="_blank"
+          class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+          Tidak Ada Kajian Live
+        </a>
 
-<div class="btn-left">
-  <a href="https://www.youtube.com/@PontrenisBatam/streams" target="_blank" class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
-    Ikuti Kajian Live
-  </a>
+        <br>
 
-  <br>
-                    
-  <!-- Location link -->
-  <a href="https://maps.app.goo.gl/fm9H7uCAfbmw2SxC7" 
-     target="_blank" 
-     class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
-      LOKASI
-  </a>
+        <a href="https://maps.app.goo.gl/uoSPHD3MUK3xzwGr6"
+          target="_blank"
+          class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+          LOKASI
+        </a>
+      </div>
+    </div>
+  </div>
 </div>
+
+
+            <div class="swiper-slide">
+  <div class="banner-item image-zoom-effect">
+    <div class="image-holder">
+      <a href="#">
+        <img src="images/musholla-alqodiri.JPG" alt="product" class="img-fluid">
+      </a>
+    </div>
+
+    <div class="banner-content py-4">
+      <h5 class="element-title text-uppercase">
+        <a href="index.html" class="item-anchor">
+          Musholla Al-Qodiri
+        </a>
+      </h5>
+
+      <div class="kajian-alqodiri">
+        <h5 id="judul-kajian-alqodiri">Jadwal Kajian Hari Ini</h5>
+
+        <button id="tombol-jadwal-alqodiri"
+          onclick="toggleJadwalAlqodiri()">
+          Lihat Jadwal
+        </button>
+
+        <div id="deskripsi-kajian-alqodiri" style="display:none;">
+          Memuat jadwal...
+        </div>
+      </div>
+
+      <script>
+        const jadwalAlqodiri = {
+          0: ["Belum ada jadwal kajian rutin untuk hari ini"], // Minggu
+          1: ["Belum ada jadwal kajian rutin untuk hari ini"], // Senin
+          2: ["Belum ada jadwal kajian rutin untuk hari ini"], // Selasa
+          3: ["Belum ada jadwal kajian rutin untuk hari ini"], // Rabu
+          4: ["Belum ada jadwal kajian rutin untuk hari ini"], // Kamis
+          5: ["Belum ada jadwal kajian rutin untuk hari ini"], // Jumat
+          6: [ // Sabtu
+            "Ba'da Shubuh<br>Syarah 'Aqidatus Salaf wa Ashaabul Hadits<br>Ustadz Mahmudi Arif Dahlan, S.Th - Hafidzahullah"
+          ]
+        };
+
+        document.addEventListener('DOMContentLoaded', function () {
+          const hariIni = new Date().getDay();
+          const elemen = document.getElementById("deskripsi-kajian-alqodiri");
+
+          if (elemen) {
+            elemen.innerHTML =
+              jadwalAlqodiri[hariIni]?.join("<br><br>") ||
+              "Tidak ada kajian rutin hari ini";
+          }
+        });
+
+        function toggleJadwalAlqodiri() {
+          const deskripsi = document.getElementById("deskripsi-kajian-alqodiri");
+          const tombol = document.getElementById("tombol-jadwal-alqodiri");
+
+          if (deskripsi.style.display === "none") {
+            deskripsi.style.display = "block";
+            tombol.textContent = "Sembunyikan Jadwal";
+          } else {
+            deskripsi.style.display = "none";
+            tombol.textContent = "Lihat Jadwal";
+          }
+        }
+      </script>
+
+      <div class="btn-left">
+        <a href=""
+          target="_blank"
+          class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+          Tidak Ada Kajian Live
+        </a>
+
+        <br>
+
+        <a href="https://maps.app.goo.gl/Rzp49YsmB82wAr9e8"
+          target="_blank"
+          class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+          LOKASI
+        </a>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-</div>
+
+
+            <div class="swiper-slide">
+              <div class="banner-item image-zoom-effect">
+                <div class="image-holder">
+                  <a href="#">
+                    <img src="images/musholla-markaz.JPG" alt="product" class="img-fluid">
+                  </a>
+                </div>
+
+                <div class="banner-content py-4">
+                  <h5 class="element-title text-uppercase">
+                    <a href="index.html" class="item-anchor">
+                      Musholla Markaz Al-Ukhuwwah
+                    </a>
+                  </h5>
+
+                  <div class="kajian-markaz">
+                    <h5 id="judul-kajian-markaz">Jadwal Kajian Hari Ini</h5>
+
+                    <button id="tombol-jadwal-markaz"
+                      onclick="toggleJadwalMarkaz()">
+                      Lihat Jadwal
+                    </button>
+
+                    <!-- DISAMAKAN: p -> div -->
+                    <div id="deskripsi-kajian-markaz" style="display:none;">
+                      Memuat jadwal...
+                    </div>
+                  </div>
+
+                  <script>
+                    const jadwalMarkaz = {
+                      0: ["Belum ada jadwal kajian rutin untuk hari ini"], // Minggu: Tidak ada
+                      1: [ // Senin
+                        "Ba'da Isya<br> WIQAAYATUL INSAAN MINAL JINNI WASY SYAITHAAN<br>Ustadz Riswanto Abu Musyawir - Hafidzahullah"
+                      ],
+                      2: ["Belum ada jadwal kajian rutin untuk hari ini"], // Selasa: Tidak ada
+                      3: [ // Rabu
+                        "Ba'da Isya<br> KITAAB AL-KABAAIR (Dosa-dosa besar)<br>Ustadz Wildan Siregar, S.Kom., MA. - Hafidzahullah"
+                      ],
+                      4: ["Belum ada jadwal kajian rutin untuk hari ini"], // Kamis: Tidak ada
+                      5: [ // Jumat
+                        "Ba'da Isya<br>KITAAB AT-TAUHIID<br>Ustadz Abu Ishaq Ibrohim Harahap - Hafidzahullah"
+                      ],
+                      6: ["Belum ada jadwal kajian rutin untuk hari ini"]  // Sabtu: Tidak ada
+                    };
+
+                    document.addEventListener('DOMContentLoaded', function () {
+                      const hariIni = new Date().getDay();
+                      const elemen = document.getElementById("deskripsi-kajian-markaz");
+
+                      if (elemen) {
+                        elemen.innerHTML =
+                          jadwalMarkaz[hariIni]?.join("<br><br>") ||
+                          "Tidak ada kajian rutin hari ini";
+                      }
+                    });
+
+                    function toggleJadwalMarkaz() {
+                      const deskripsi = document.getElementById("deskripsi-kajian-markaz");
+                      const tombol = document.getElementById("tombol-jadwal-markaz");
+
+                      if (deskripsi.style.display === "none") {
+                        deskripsi.style.display = "block";
+                        tombol.textContent = "Sembunyikan Jadwal";
+                      } else {
+                        deskripsi.style.display = "none";
+                        tombol.textContent = "Lihat Jadwal";
+                      }
+                    }
+                  </script>
+
+                  <div class="btn-left">
+                    <a href="https://whatsapp.com/channel/0029VaoH6Uw4IBhGCK52Z000"
+                      target="_blank"
+                      class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+                      Ikuti Kajian Live
+                    </a>
+
+                    <br>
+
+                    <a href="https://maps.app.goo.gl/7eyyWH5LV9TNnpQNA"
+                      target="_blank"
+                      class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+                      LOKASI
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="swiper-slide">
+              <div class="banner-item image-zoom-effect">
+                <div class="image-holder">
+                  <a href="#">
+                    <img src="images/masjid-GIS.JPG" alt="product" class="img-fluid">
+                  </a>
+                </div>
+
+                <div class="banner-content py-4">
+                  <h5 class="element-title text-uppercase">
+                    <a href="index.html" class="item-anchor">
+                      Masjid GIS
+                    </a>
+                  </h5>
+
+                  <div class="kajian-gis">
+                    <h5 id="judul-kajian-gis">Jadwal Kajian Hari Ini</h5>
+
+                    <button id="tombol-jadwal-gis"
+                      onclick="toggleJadwalGis()">
+                      Lihat Jadwal
+                    </button>
+
+                    <!-- DISAMAKAN: p -> div -->
+                    <div id="deskripsi-kajian-gis" style="display:none;">
+                      Memuat jadwal...
+                    </div>
+                  </div>
+
+                  <script>
+                    const jadwalGis = {
+                      0: ["Belum ada jadwal kajian rutin untuk hari ini"], // Minggu: Tidak ada
+                      1: ["Belum ada jadwal kajian rutin untuk hari ini"], // Senin: Tidak ada
+                      2: ["Belum ada jadwal kajian rutin untuk hari ini"], // Selasa: Tidak ada
+                      3: ["Belum ada jadwal kajian rutin untuk hari ini"], // Rabu: Tidak ada
+                      4: [ // Jumat
+                        "Ba’da Maghrib<br>Asbaab Ziyaadatul Iimaan wa Nuqshoanihi<br>Ustadz Mahmudi Arif Dahlan, M.Pd - Hafidzahullah"
+                      ],
+                      5: ["Belum ada jadwal kajian rutin untuk hari ini"], // Sabtu? Tunggu, Sabtu adalah 6
+                      6: [ // Sabtu
+                        "Ba’da Maghrib<br>SYARAH USHUL TSALATSAH<br>Ustadz Padli Nasution - Hafidzahullah"
+                      ]
+                    };
+
+                    document.addEventListener('DOMContentLoaded', function () {
+                      const hariIni = new Date().getDay();
+                      const elemen = document.getElementById("deskripsi-kajian-gis");
+
+                      if (elemen) {
+                        elemen.innerHTML =
+                          jadwalGis[hariIni]?.join("<br><br>") ||
+                          "Tidak ada kajian rutin hari ini";
+                      }
+                    });
+
+                    function toggleJadwalGis() {
+                      const deskripsi = document.getElementById("deskripsi-kajian-gis");
+                      const tombol = document.getElementById("tombol-jadwal-gis");
+
+                      if (deskripsi.style.display === "none") {
+                        deskripsi.style.display = "block";
+                        tombol.textContent = "Sembunyikan Jadwal";
+                      } else {
+                        deskripsi.style.display = "none";
+                        tombol.textContent = "Lihat Jadwal";
+                      }
+                    }
+                  </script>
+
+                  <div class="btn-left">
+                    <a href="#" target="_blank"
+                      class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+                      Tidak Ada Kajian Live
+                    </a>
+
+                    <br>
+
+                    <a href="https://maps.app.goo.gl/jDKGPRzjvrqSNYZM9"
+                      target="_blank"
+                      class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+                      LOKASI
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="banner-item image-zoom-effect">
+                <div class="image-holder">
+                  <a href="#">
+                    <img src="images/masjid-almuhajjirin.JPG" alt="Masjid Al Muhajjirin Tiban" class="img-fluid">
+                  </a>
+                </div>
+
+                <div class="banner-content py-4">
+                  <h5 class="element-title text-uppercase">
+                    <a href="index.html" class="item-anchor">Masjid Al Muhajjirin Tiban</a>
+                  </h5>
+
+                  <div class="kajian-almuhajjirin">
+                    <h5 id="judul-kajian-almuhajjirin">Jadwal Kajian Hari Ini</h5>
+
+                    <button id="tombol-jadwal-almuhajjirin"
+                      onclick="toggleJadwalAlMuhajjirin()">
+                      Lihat Jadwal
+                    </button>
+
+                    <div id="deskripsi-kajian-almuhajjirin" style="display:none;"></div>
+                  </div>
+
+                  <script>
+                    const jadwalAlMuhajjirin = {
+                      0: ["Kajian Ba'da Maghrib<br>Tafsir Ibnu Katsir<br>Ustadz Ahmad – hafidzahullah"],
+                      1: ["Kajian Ba'da Isya<br>Tafsir Al Qur'an & Tematik<br>Ustadz Abu Humairoh – hafidzahullah"],
+                      2: ["Belum ada jadwal kajian rutin untuk hari ini"],
+                      3: ["Belum ada jadwal kajian rutin untuk hari ini"],
+                      4: ["Kajian Ba'da Isya<br>Mukhtashor Mausuatil Akhlaq<br>Ustadz Rahmat Nur Hidayat – hafidzahullah"],
+                      5: ["Belum ada jadwal kajian rutin untuk hari ini"],
+                      6: ["Kajian Ba'da Subuh<br>Tafsir Al Qur'an<br>Ustadz Wildan Siregar – hafidzahullah"]
+                    };
+
+                    document.addEventListener('DOMContentLoaded', function () {
+                      const hariIni = new Date().getDay();
+                      const elemen = document.getElementById("deskripsi-kajian-almuhajjirin");
+
+                      if (elemen) {
+                        elemen.innerHTML =
+                          jadwalAlMuhajjirin[hariIni]?.join("<br><br>") ||
+                          "Tidak ada kajian hari ini";
+                      }
+                    });
+
+                    function toggleJadwalAlMuhajjirin() {
+                      const deskripsi = document.getElementById("deskripsi-kajian-almuhajjirin");
+                      const tombol = document.getElementById("tombol-jadwal-almuhajjirin");
+
+                      if (deskripsi.style.display === "none") {
+                        deskripsi.style.display = "block";
+                        tombol.textContent = "Sembunyikan Jadwal";
+                      } else {
+                        deskripsi.style.display = "none";
+                        tombol.textContent = "Lihat Jadwal";
+                      }
+                    }
+                  </script>
+
+                  <div class="btn-left">
+                  <a id="link-kajian-live"
+              href="#"
+              target="_blank"
+              class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+              Ikuti Kajian Live
+            </a>
+
+            <script>
+              document.addEventListener('DOMContentLoaded', function () {
+                const hariIni = new Date().getDay(); // 0 = Ahad, 1 = Senin, ..., 6 = Sabtu
+                const linkKajian = document.getElementById("link-kajian-live");
+
+                const linkPerHari = {
+                  1: "https://www.youtube.com/@HumairohChannelNew/streams", // Senin
+                  4: "https://www.youtube.com/@RahmatNurHidayatOfficial"    // Kamis
+                };
+
+                if (linkPerHari[hariIni]) {
+                  linkKajian.href = linkPerHari[hariIni];
+                } else {
+                  // jika hari lain → nonaktif
+                  linkKajian.href = "#";
+                  linkKajian.textContent = "Kajian Live Tidak Tersedia Hari Ini";
+                  linkKajian.style.pointerEvents = "none";
+                  linkKajian.style.opacity = "0.6";
+                }
+              });
+            </script>
+
+
+                    <br>
+
+                    <a href="https://maps.app.goo.gl/SMMutXpV6o8FM8UV9"
+                      target="_blank"
+                      class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+                      LOKASI
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
 
             <div class="swiper-slide">
               <div class="banner-item image-zoom-effect">
@@ -862,56 +1573,56 @@ function toggleJadwalPontrenis() {
                     <a href="index.html" class="item-anchor">Masjid Jabal Rahmah</a>
                   </h5>
                   <div class="kajian-jabalrahmah">
-    <h5 id="judul-kajian-jabalrahmah">Jadwal Kajian Hari Ini</h5>
-    <button id="tombol-jadwal-jabalrahmah" onclick="toggleJadwalJabalRahmah()">Lihat Jadwal</button>
-    <div id="deskripsi-kajian-jabalrahmah" style="display: none;"></div>
-</div>
+                  <h5 id="judul-kajian-jabalrahmah">Jadwal Kajian Hari Ini</h5>
+                  <button id="tombol-jadwal-jabalrahmah" onclick="toggleJadwalJabalRahmah()">Lihat Jadwal</button>
+                  <div id="deskripsi-kajian-jabalrahmah" style="display: none;"></div>
+              </div>
 
-<script>
-    const jadwalJabalRahmah = {
-        0: [ // Ahad
-            "Kajian Ba'da Subuh<br>Kitab Asyroothus Saa'ah<br>Ustadz Abu Nida, S.Pd.I – hafidzahullah",
-            "Kajian Ba'da Maghrib<br>Kitab Umdatul Ahkam<br>Ustadz Abu Ahmad – hafidzahullah"
-        ],
-        1: [ // Senin
-            "Kajian Ba'da Subuh<br>Belum tersedia",
-            "Kajian Ba'da Maghrib<br>Tahsin Al Qur'an (Kitab Riyadhoh Imriin Bi Fakkihi)<br>Ustadz Abu Fawwaz – hafidzahullah"
-        ],
-        2: [ // Selasa
-            "Kajian Ba'da Subuh<br>Belum tersedia",
-            "Kajian Ba'da Maghrib<br>Mengenal Sosok Perilaku Nabi ﷺ<br>Ustadz Firdaus, Lc., S.Pd.I – hafidzahullah"
-        ],
-        3: [ // Rabu
-            "Kajian Ba'da Subuh<br>Belum tersedia",
-            "Kajian Ba'da Maghrib<br>Penjelasan Tentang Pohon Iman<br>Ustadz Rahmat Nur Hidayat – hafidzahullah"
-        ],
-        4: [ // Kamis
-            "Kajian Ba'da Subuh<br>Belum tersedia",
-            "Kajian Ba'da Maghrib<br>Kaidah Penting Dalam Ibadah<br>Ustadz Abu Nida, S.Pd.I – hafidzahullah"
-        ],
-        5: [ // Jumat
-            function() {
-                const date = new Date();
-                const weekOfMonth = Math.ceil(date.getDate() / 7);
-                
-                let asharSession = "Kajian Ba'da Ashar<br>Kajian Ummahat<br>";
-                if(weekOfMonth <= 2) {
-                    asharSession += "Ustadz Abu Ahmad – hafidzahullah";
-                } else {
-                    asharSession += "Ustadz Abu Nida, S.Pd.I – hafidzahullah";
-                }
-                
-                return [
-                    asharSession,
-                    "Kajian Ba'da Maghrib<br>Kajian Kitab Fiqih Asmaul Husna<br>Ustadz Ahmad Wahb, M.A – hafidzahullah"
-                ];
-            }
-        ],
-        6: [ // Sabtu
-            "Kajian Ba'da Subuh<br>Kitab Iklash<br>Ustadz Rahmat Nur Hidayat – hafidzahullah",
-            "Kajian Ba'da Maghrib<br>Tafsir Al Qur'an<br>Ustadz Ferry Anshar, B.A – hafidzahullah"
-        ]
-    };
+          <script>
+              const jadwalJabalRahmah = {
+                  0: [ // Ahad
+                      "Kajian Ba'da Subuh<br>Kitab Asyroothus Saa'ah<br>Ustadz Abu Nida, S.Pd.I – hafidzahullah",
+                      "Kajian Ba'da Maghrib<br>Kitab Umdatul Ahkam<br>Ustadz Abu Ahmad – hafidzahullah"
+                  ],
+                  1: [ // Senin
+                      "Kajian Ba'da Subuh<br>Belum tersedia",
+                      "Kajian Ba'da Maghrib<br>Tahsin Al Qur'an (Kitab Riyadhoh Imriin Bi Fakkihi)<br>Ustadz Abu Fawwaz – hafidzahullah"
+                  ],
+                  2: [ // Selasa
+                      "Kajian Ba'da Subuh<br>Belum tersedia",
+                      "Kajian Ba'da Maghrib<br>Mengenal Sosok Perilaku Nabi ﷺ<br>Ustadz Firdaus, Lc., S.Pd.I – hafidzahullah"
+                  ],
+                  3: [ // Rabu
+                      "Kajian Ba'da Subuh<br>Belum tersedia",
+                      "Kajian Ba'da Maghrib<br>Penjelasan Tentang Pohon Iman<br>Ustadz Rahmat Nur Hidayat – hafidzahullah"
+                  ],
+                  4: [ // Kamis
+                      "Kajian Ba'da Subuh<br>Belum tersedia",
+                      "Kajian Ba'da Maghrib<br>Kaidah Penting Dalam Ibadah<br>Ustadz Abu Nida, S.Pd.I – hafidzahullah"
+                  ],
+                  5: [ // Jumat
+                      function() {
+                          const date = new Date();
+                          const weekOfMonth = Math.ceil(date.getDate() / 7);
+                          
+                          let asharSession = "Kajian Ba'da Ashar<br>Kajian Ummahat<br>";
+                          if(weekOfMonth <= 2) {
+                              asharSession += "Ustadz Abu Ahmad – hafidzahullah";
+                          } else {
+                              asharSession += "Ustadz Abu Nida, S.Pd.I – hafidzahullah";
+                          }
+                          
+                          return [
+                              asharSession,
+                              "Kajian Ba'da Maghrib<br>Kajian Kitab Fiqih Asmaul Husna<br>Ustadz Ahmad Wahb, M.A – hafidzahullah"
+                          ];
+                      }
+                  ],
+                  6: [ // Sabtu
+                      "Kajian Ba'da Subuh<br>Kitab Iklash<br>Ustadz Rahmat Nur Hidayat – hafidzahullah",
+                      "Kajian Ba'da Maghrib<br>Tafsir Al Qur'an<br>Ustadz Ferry Anshar, B.A – hafidzahullah"
+                  ]
+              };
 
     document.addEventListener('DOMContentLoaded', function() {
         try {
@@ -949,29 +1660,222 @@ function toggleJadwalPontrenis() {
             tombol.textContent = "Lihat Jadwal";
         }
     }
-</script>
+          </script>
 
-<div class="btn-left">
-  <a href="https://www.facebook.com/masjidjabalrahmah.batam.9" target="_blank" class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
-    Ikuti Kajian Live
-  </a>
+                      <div class="btn-left">
+                        <a href="https://www.facebook.com/masjidjabalrahmah.batam.9" target="_blank" class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+                          Ikuti Kajian Live
+                        </a>
 
-  <br>
-                    
-  <!-- Location link -->
-  <a href="https://maps.app.goo.gl/bTT82nixD7wRcg51A" 
-     target="_blank" 
-     class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
-      LOKASI
-  </a>
-</div>
-</div>
-</div>
-</div>
+                        <br>
+                                          
+                        <!-- Location link -->
+                        <a href="https://maps.app.goo.gl/bTT82nixD7wRcg51A" 
+                          target="_blank" 
+                          class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+                            LOKASI
+                        </a>
+                      </div>
+                      </div>
+                      </div>
+                      </div>
+  
+           
+          <div class="swiper-slide">
+  <div class="banner-item image-zoom-effect">
+    <div class="image-holder">
+      <a href="#">
+        <img src="images/ikhwan-bengkong.JPG" alt="product" class="img-fluid">
+      </a>
+    </div>
+
+    <div class="banner-content py-4">
+      <h5 class="element-title text-uppercase">
+        <a href="index.html" class="item-anchor">
+          Kajian Ikhwan Bengkong
+        </a>
+      </h5>
+
+      <div class="kajian-bengkong">
+        <h5 id="judul-kajian-bengkong">Jadwal Kajian Hari Ini</h5>
+
+        <button id="tombol-jadwal-bengkong"
+          onclick="toggleJadwalBengkong()">
+          Lihat Jadwal
+        </button>
+
+        <div id="deskripsi-kajian-bengkong" style="display:none;">
+          Memuat jadwal...
+        </div>
+      </div>
+
+      <script>
+        const jadwalBengkong = {
+          0: ["Belum ada jadwal kajian rutin untuk hari ini"], // Minggu
+          1: ["Belum ada jadwal kajian rutin untuk hari ini"], // Senin
+          2: ["Belum ada jadwal kajian rutin untuk hari ini"], // Selasa
+          3: ["Belum ada jadwal kajian rutin untuk hari ini"], // Rabu
+          4: [ // Kamis
+            "Ba'da Isya<br>Tematik / Kitab Tauhid<br>Ustadz Abu Humairoh - Hafidzahullah"
+          ],
+          5: ["Belum ada jadwal kajian rutin untuk hari ini"], // Jumat
+          6: ["Belum ada jadwal kajian rutin untuk hari ini"]  // Sabtu
+        };
+
+        document.addEventListener('DOMContentLoaded', function () {
+          const hariIni = new Date().getDay();
+          const elemen = document.getElementById("deskripsi-kajian-bengkong");
+
+          if (elemen) {
+            elemen.innerHTML =
+              jadwalBengkong[hariIni]?.join("<br><br>") ||
+              "Tidak ada kajian rutin hari ini";
+          }
+        });
+
+        function toggleJadwalBengkong() {
+          const deskripsi = document.getElementById("deskripsi-kajian-bengkong");
+          const tombol = document.getElementById("tombol-jadwal-bengkong");
+
+          if (deskripsi.style.display === "none") {
+            deskripsi.style.display = "block";
+            tombol.textContent = "Sembunyikan Jadwal";
+          } else {
+            deskripsi.style.display = "none";
+            tombol.textContent = "Lihat Jadwal";
+          }
+        }
+      </script>
+
+      <div class="btn-left">
+        <a href="https://www.youtube.com/@HumairohChannelNew"
+          target="_blank"
+          class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+          Ikuti Kajian Live
+        </a>
+
+        <br>
+
+        <a href="https://maps.app.goo.gl/fBGgqaBN7FCJs7vk9?g_st=aw"
+          target="_blank"
+          class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+          LOKASI
+        </a>
+      </div>
+    </div>
+  </div>
 </div>
 
+                  <div class="swiper-slide">
+            <div class="banner-item image-zoom-effect">
+              <div class="image-holder">
+                <a href="#">
+                  <img src="images/musholla-assuuq.JPG" alt="product" class="img-fluid">
+                </a>
+              </div>
+
+              <div class="banner-content py-4">
+                <h5 class="element-title text-uppercase">
+                  <a href="index.html" class="item-anchor">Musholla As Su'uq</a>
+                </h5>
+          
+                <div class="kajian-assuuq">
+            <h5 id="judul-kajian-assuuq">Jadwal Kajian Hari Ini</h5>
+
+            <button id="tombol-jadwal-assuuq" onclick="toggleJadwalAssuuq()">
+              Lihat Jadwal
+            </button>
+
+            <div id="deskripsi-kajian-assuuq" style="display: none;"></div>
+
+            <script>
+              const jadwalAssuuq = {
+                0: ["Belum ada jadwal kajian rutin untuk hari ini"],
+                1: ["Belum ada jadwal kajian rutin untuk hari ini"],
+                2: ["Belum ada jadwal kajian rutin untuk hari ini"],
+                3: ["Belum ada jadwal kajian rutin untuk hari ini"],
+                4: ["Belum ada jadwal kajian rutin untuk hari ini"],
+                5: [
+                  function () {
+                    const date = new Date();
+                    const weekOfMonth = Math.ceil(date.getDate() / 7);
+                    let kajian = "Kajian Ba'da Isya<br>";
+
+                    if (weekOfMonth === 1 || weekOfMonth === 3) {
+                      kajian +=
+                        "Tuntunan Islam Tentang Hak dan Kewajiban Rakyat Terhadap Pemimpin<br>" +
+                        "Ustadz Ahmadi ZM – hafidzahullah";
+                    } else if (weekOfMonth === 2 || weekOfMonth === 4) {
+                      kajian +=
+                        "Kemudahan Islam Untuk Generasi Muda Islam<br>" +
+                        "Ustadz Abu Nida – hafidzahullah";
+                    } else {
+                      kajian += "Tidak ada kajian rutin Jumat pekan ini";
+                    }
+
+                    return [kajian];
+                  }
+                ],
+                6: ["Belum ada jadwal kajian rutin untuk hari ini"]
+              };
+
+              document.addEventListener('DOMContentLoaded', function () {
+                const hariIni = new Date().getDay();
+                const deskripsi = document.getElementById("deskripsi-kajian-assuuq");
+
+                let jadwalHariIni;
+
+                if (hariIni === 5 && typeof jadwalAssuuq[hariIni][0] === 'function') {
+                  jadwalHariIni = jadwalAssuuq[hariIni][0]();
+                } else {
+                  jadwalHariIni = jadwalAssuuq[hariIni] || ["Jadwal belum tersedia"];
+                }
+
+                if (deskripsi) {
+                  deskripsi.innerHTML = jadwalHariIni.join("<br><br>");
+                }
+              });
+
+              function toggleJadwalAssuuq() {
+                const deskripsi = document.getElementById("deskripsi-kajian-assuuq");
+                const tombol = document.getElementById("tombol-jadwal-assuuq");
+
+                if (!deskripsi) return;
+
+                if (deskripsi.style.display === "none") {
+                  deskripsi.style.display = "block";
+                  tombol.textContent = "Sembunyikan Jadwal";
+                } else {
+                  deskripsi.style.display = "none";
+                  tombol.textContent = "Lihat Jadwal";
+                }
+              }
+            </script>
+
+            <div class="btn-left">
+            <a href="" target="_blank" class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+            Tidak Ada Siaran Live
+              </a>
+
+            <br>
+
+            <a href="https://maps.app.goo.gl/pG4diAJJauGzaa4VA"
+              target="_blank"
+              class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
+              LOKASI
+            </a>
+          </div>
+          </div>
+          </div>
+          </div>
 
 
+         
+          </div>
+         
+
+        
+       
 <div class="swiper-pagination"></div>
 </div>
 <div class="icon-arrow icon-arrow-left"><svg width="50" height="50" viewBox="0 0 24 24">
@@ -989,6 +1893,7 @@ function toggleJadwalPontrenis() {
   <div class="elegant-container">
     <div class="continuous-swiper">
       <div class="swiper-wrapper">
+
       <!-- Feature 1 -->
 <div class="swiper-slide elegant-slide">
   <a class="slide-link">
@@ -1004,7 +1909,102 @@ function toggleJadwalPontrenis() {
     </div>
   </a>
 </div>
+
+<!-- Feature 1 -->
+<div class="swiper-slide elegant-slide">
+  <a class="slide-link">
+    <div class="slide-content">
+      <svg width="38" height="38" viewBox="0 0 24 24">
+        <use xlink:href="#calendar"></use>
+      </svg>
+      <h4 style="cursor:pointer; color:#000000;"
+          onclick="showImagePopup(event, 'images/jadwal-nuruliman.jpeg')">
+        Masjid Nurul Iman
+      </h4>
+      <p>Klik untuk lihat jadwal lengkap kajian.</p>
+    </div>
+  </a>
+</div>
+
+<!-- Feature 1 -->
+<div class="swiper-slide elegant-slide">
+  <a class="slide-link">
+    <div class="slide-content">
+      <svg width="38" height="38" viewBox="0 0 24 24">
+        <use xlink:href="#calendar"></use>
+      </svg>
+      <h4 style="cursor:pointer; color:#000000;"
+          onclick="showImagePopup(event, 'images/jadwal-bengkong.jpeg')">
+        Kajian Ikhwan Bengkong
+      </h4>
+      <p>Klik untuk lihat jadwal lengkap kajian.</p>
+    </div>
+  </a>
+</div>
+
+     <!-- Feature 1 -->
+<div class="swiper-slide elegant-slide">
+  <a class="slide-link">
+    <div class="slide-content">
+      <svg width="38" height="38" viewBox="0 0 24 24">
+        <use xlink:href="#calendar"></use>
+      </svg>
+      <h4 style="cursor:pointer; color:#000000;"
+          onclick="showImagePopup(event, 'images/jadwal-alqodiri.jpeg')">
+        Musholla Al Qodiri
+      </h4>
+      <p>Klik untuk lihat jadwal lengkap kajian.</p>
+    </div>
+  </a>
+</div>
+
+ <!-- Feature 1 -->
+<div class="swiper-slide elegant-slide">
+  <a class="slide-link">
+    <div class="slide-content">
+      <svg width="38" height="38" viewBox="0 0 24 24">
+        <use xlink:href="#calendar"></use>
+      </svg>
+      <h4 style="cursor:pointer; color:#000000;"
+          onclick="showImagePopup(event, 'images/jadwal-assuuq.JPG')">
+        Musholla As Suuq
+      </h4>
+      <p>Klik untuk lihat jadwal lengkap kajian.</p>
+    </div>
+  </a>
+</div>
+
+ <!-- Feature 1 -->
+<div class="swiper-slide elegant-slide">
+  <a class="slide-link">
+    <div class="slide-content">
+      <svg width="38" height="38" viewBox="0 0 24 24">
+        <use xlink:href="#calendar"></use>
+      </svg>
+      <h4 style="cursor:pointer; color:#000000;"
+          onclick="showImagePopup(event, 'images/jadwal-markaz.jpeg')">
+        Musholla Markaz Al Ukhuwwah
+      </h4>
+      <p>Klik untuk lihat jadwal lengkap kajian.</p>
+    </div>
+  </a>
+</div>
         
+ <!-- Feature 1 -->
+<div class="swiper-slide elegant-slide">
+  <a class="slide-link">
+    <div class="slide-content">
+      <svg width="38" height="38" viewBox="0 0 24 24">
+        <use xlink:href="#calendar"></use>
+      </svg>
+      <h4 style="cursor:pointer; color:#000000;"
+          onclick="showImagePopup(event, 'images/jadwal-gis.JPG')">
+        Masjid GIS
+      </h4>
+      <p>Klik untuk lihat jadwal lengkap kajian.</p>
+    </div>
+  </a>
+</div>
         <!-- Feature 2 -->
          <div class="swiper-slide elegant-slide">
   <a class="slide-link">
@@ -1015,6 +2015,38 @@ function toggleJadwalPontrenis() {
       <h4 style="cursor:pointer; color:#000000;"
           onclick="showImagePopup(event, 'images/jadwal-nurulhidayah.PNG')">
         Masjid Nurul Hidayah
+      </h4>
+      <p>Klik untuk lihat jadwal lengkap kajian.</p>
+    </div>
+  </a>
+</div>
+
+    <!-- Feature 2 -->
+         <div class="swiper-slide elegant-slide">
+  <a class="slide-link">
+    <div class="slide-content">
+      <svg width="38" height="38" viewBox="0 0 24 24">
+        <use xlink:href="#calendar"></use>
+      </svg>
+      <h4 style="cursor:pointer; color:#000000;"
+          onclick="showImagePopup(event, 'images/jadwal-nidaulilmi.png')">
+        Masjid Nidaul Ilmi
+      </h4>
+      <p>Klik untuk lihat jadwal lengkap kajian.</p>
+    </div>
+  </a>
+</div>
+
+<!-- Feature 2 -->
+         <div class="swiper-slide elegant-slide">
+  <a class="slide-link">
+    <div class="slide-content">
+      <svg width="38" height="38" viewBox="0 0 24 24">
+        <use xlink:href="#calendar"></use>
+      </svg>
+      <h4 style="cursor:pointer; color:#000000;"
+          onclick="showImagePopup(event, 'images/jadwal-alfajri.JPG')">
+        Masjid Al Fajri Batam
       </h4>
       <p>Klik untuk lihat jadwal lengkap kajian.</p>
     </div>
