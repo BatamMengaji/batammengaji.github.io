@@ -205,7 +205,7 @@ function closeSidebar() {
                     <div id="deskripsi-kajian" style="display: none;"></div>
                 </div>
                 
-                <script>
+               <script>
                     const jadwalKajian = {
                         0: [ // Ahad / Minggu
                             "Kajian Ba'da Subuh<br>Kitab Al Wajiz<br>Ustadz Farhan Elhubby – hafidzahullah",
@@ -250,6 +250,7 @@ function closeSidebar() {
                         }
                     }
                 </script>
+
                   
                   <div class="btn-left">
                     <!-- Link to follow live studies on YouTube -->
@@ -437,7 +438,7 @@ function closeSidebar() {
 
           3: ["Kajian Ba'da Isya<br>Fikih Asmaul Husna<br>Ustadz Rahmat Nur Hidayat – hafidzahullah"],
 
-          4: ["Kajian Ba'da Isya<br>Sirah Nabawiyah<br>Ustadz Abu Humairoh – hafidzahullah"],
+          4: [" - "],
 
           5: ["Kajian Ba'da Isya<br>Mukhtasharul Kalam ala Bulugh Al Maram<br>Ustadz Muhammad Su'ib – hafidzahullah"],
 
@@ -507,62 +508,96 @@ function closeSidebar() {
                 </div>
                 
                 <script>
-                    const jadwalHang = {
-                        0: [ // Ahad
-                            "Kajian Ba'da Subuh<br>Mutashar Minhajul Qosidri<br>Ustadz Ferry Anshar, BA – hafidzahullah",
-                            "Kajian Ba'da Maghrib<br>Syarhus Sunnah<br>Ustadz Rahmat Nur Hidayat – hafidzahullah"
-                        ],
-                        1: [ // Senin
-                            "Kajian Ba'da Ashar (Khusus Muslimah)<br>Fiqih Keluarga<br>Ustadz Raihan, BA – hafidzahullah",
-                            "Kajian Ba'da Maghrib<br>Bulughul Maram<br>Ustadz Raihan, BA – hafidzahullah"
-                        ],
-                        2: [ // Selasa
-                            "Kajian Ba'da Ashar (Khusus Muslimah)<br>Fiqih Wanita<br>Ustadz Firdaus, LC – hafidzahullah",
-                            "Kajian Ba'da Maghrib<br>Tahsin Talaqqi Al Qur'an<br>Ustadz Abu Fawwaz Ahmad – hafidzahullah"
-                        ],
-                        3: [ // Rabu
-                            "Kajian Ba'da Maghrib<br>Kitab Akhto' Mushollin<br>Ustadz Fikri Alhamdi, BA – hafidzahullah"
-                        ],
-                        4: [ // Kamis
-                            "Kajian Ba'da Maghrib<br>Tafsir Abdurrahman As Sa'di<br>Ustadz Muhammad Thoha, LC – hafidzahullah"
-                        ],
-                        5: [ // Jumat
-                            "Kajian Ba'da Subuh<br>Fadhlu Bayani Tholabil Ilmi<br>Ustadz Rahmat Nur Hidayat – hafidzahullah",
-                            "Kajian Ba'da Maghrib<br>Syarah Aqidah Wasithiyah<br>Ustadz Ahmad Supiandi, S.Pd.I – hafidzahullah"
-                        ],
-                        6: [ // Sabtu
-                            "Kajian Ba'da Subuh<br>Kitab Manzhumah Raiyah<br>Ustadz Mahmudi Arif Dahlan, S.Thi – hafidzahullah",
-                            "Kajian Ba'da Ashar (Khusus Muslimah)<br>Fawaidul Fawaid<br>Ustadz Farhan Elhubby – hafidzahullah",
-                            "Kajian Ba'da Maghrib<br>Riyadhus Sholihin<br>Ustadz Rahmat Nur Hidayat – hafidzahullah"
-                        ]
-                    };
-                
-                    document.addEventListener('DOMContentLoaded', function() {
-                        const hari = new Date().getDay(); // 0 = Minggu (Ahad), 1 = Senin, dst
-                        const elemen = document.getElementById("deskripsi-kajian-hang");
-                        const jadwalHari = jadwalHang[hari];
-                        
-                        if (elemen && jadwalHari) {
-                            elemen.innerHTML = jadwalHari.join("<br><br>");
-                        } else {
-                            elemen.innerHTML = "Tidak ada kajian rutin hari ini";
-                        }
-                    });
-                
-                    function toggleJadwalHang() {
-                        const deskripsiElemen = document.getElementById("deskripsi-kajian-hang");
-                        const tombol = document.getElementById("tombol-jadwal-hang");
-                        
-                        if (deskripsiElemen.style.display === "none") {
-                            deskripsiElemen.style.display = "block";
-                            tombol.textContent = "Sembunyikan Jadwal";
-                        } else {
-                            deskripsiElemen.style.display = "none";
-                            tombol.textContent = "Lihat Jadwal";
-                        }
-                    }
-                </script>
-                  
+    const jadwalHang = {
+        1: [ // Senin
+            "Kajian Muslimah, Pukul 10:00<br>40 Karakteristik Mereka Yang Dicintai Allah<br>Ust Farhan Elhubby, S.Pd",
+            "Ba’da Maghrib<br>Bulughul Maram<br>Ust Raihan, BA, M.Pd"
+        ],
+        2: [ // Selasa
+            "Kajian Muslimah, Pukul 08:30<br>Al Arobiyah Baina Yadaik dan Durusul Lughoh (Bahasa Arab)<br>Ustadzah Endang Ummu Zahro",
+            "Ba’da Maghrib<br>Attuhafuu Bil Ma’tsuri ‘An As-Salaf<br>Ust Said Salamah, S.Pd.I"
+        ],
+        3: [ // Rabu
+            "Kajian Muslimah, Pukul 08:00<br>Tahsin Al Qur’an<br>Ustadzah Aisyah",
+            "Ba’da Maghrib<br>Zaadul Ma’ad<br>Ust Fikri Alhamdi, BA",
+            "Ba’da Isya’<br>Al Mumtaz Fil Hiwaarat Al Yaumiyyah<br>Ust Ferry Anshar, BA"
+        ],
+        4: [ // Kamis
+            "Ba’da Subuh<br>Asyrathus Sa’ah<br>Ust Abu Salim Al Banjariy",
+            "Kajian Muslimah, Pukul 10:00<br>Fawaidul Fawaid<br>Ust Abduh Arrosyad, Lc",
+            "Ba’da Maghrib<br>Taisir Karimirrahman Fi Tafsir Kalamil Mannan<br>Ust Muhammad Thoha, Lc"
+        ],
+        5: [ // Jumat
+            "Ba’da Subuh<br>Al Adabul Mufrod<br>Ust Rahmat Nur Hidayat",
+            "Ba’da Maghrib<br>Tasbihus Sa’irin Bithariqish Shalihin Ila Rabbil Al Amin<br>Ust Ahmad Supiandi, Lc, MA"
+        ],
+        6: [ // Sabtu
+            "Ba’da Subuh<br>Syarah Ushul Ats Tsalatsah<br>Ust Murdiansyah, M.Pd",
+            "Kajian Muslimah, Pukul 09:00<br>Fiqih Do’a & Dzikir<br>Ust Fikri Alhamdi, BA",
+            "Ba’da Maghrib<br>Riyadhus Shalihin<br>Ust Rahmat Nur Hidayat",
+            "Ba’da Isya’<br>Al I’tiqadiyah<br>Ust Ferry Anshar, BA"
+        ]
+    };
+
+    // Khusus Ahad (Minggu)
+    const jadwalAhad = {
+        1: [ // Pekan 1
+            "Ba’da Subuh<br>Syarah Kitab Ahaditsul Akhlak<br>Ust Abu Fairuz, Lc, MA",
+            "Ba’da Maghrib<br>Al Ishabah Fi Bayani Manhajissalaf Fittarbiyah Wal Ishlah<br>Ust Rahmat Nur Hidayat"
+        ],
+        2: [ // Pekan 2
+            "Ba’da Subuh<br>Mukhtashar Minhajul Qashidin<br>Ust Ferry Anshar, BA",
+            "Ba’da Maghrib<br>Al Ishabah Fi Bayani Manhajissalaf Fittarbiyah Wal Ishlah<br>Ust Rahmat Nur Hidayat"
+        ],
+        3: [ // Pekan 3
+            "Ba’da Subuh<br>Mukhtashar Minhajul Qashidin<br>Ust Ferry Anshar, BA",
+            "Ba’da Maghrib<br>Al Ishabah Fi Bayani Manhajissalaf Fittarbiyah Wal Ishlah<br>Ust Rahmat Nur Hidayat"
+        ],
+        4: [ // Pekan 4
+            "Ba’da Subuh<br>Syarah Kitab Ahaditsul Akhlak<br>Ust Abu Fairuz, Lc, MA",
+            "Ba’da Maghrib<br>Al Ishabah Fi Bayani Manhajissalaf Fittarbiyah Wal Ishlah<br>Ust Rahmat Nur Hidayat"
+        ]
+    };
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const hari = new Date().getDay(); // 0 = Ahad
+        const tanggal = new Date().getDate();
+
+        const elemen = document.getElementById("deskripsi-kajian-hang");
+
+        // Hitung pekan ke berapa
+        const pekan = Math.ceil(tanggal / 7);
+
+        let jadwalHari;
+
+        if (hari === 0) {
+            // Ahad → gunakan jadwal berdasarkan pekan
+            jadwalHari = jadwalAhad[pekan];
+        } else {
+            jadwalHari = jadwalHang[hari];
+        }
+
+        if (elemen && jadwalHari) {
+            elemen.innerHTML = jadwalHari.join("<br><br>");
+        } else {
+            elemen.innerHTML = "Tidak ada kajian rutin hari ini";
+        }
+    });
+
+    function toggleJadwalHang() {
+        const deskripsiElemen = document.getElementById("deskripsi-kajian-hang");
+        const tombol = document.getElementById("tombol-jadwal-hang");
+
+        if (deskripsiElemen.style.display === "none") {
+            deskripsiElemen.style.display = "block";
+            tombol.textContent = "Sembunyikan Jadwal";
+        } else {
+            deskripsiElemen.style.display = "none";
+            tombol.textContent = "Lihat Jadwal";
+        }
+    }
+</script>
+
                   <div class="btn-left">
                     <a href="https://www.youtube.com/@HangTV/streams" target="_blank" class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
                       Ikuti Kajian Live
@@ -822,7 +857,7 @@ function closeSidebar() {
       <script>
         const jadwalnidaulilmi = {
           0: [ // Ahad
-            "Kajian Malam Ahad Ba'da Isya<br>Siroh Nabawi<br>Ustadz Abu Humairoh – hafidzahullah"
+            " - "
           ],
           1: [ // Senin
             "Belum ada jadwal kajian rutin untuk hari ini."
@@ -923,69 +958,67 @@ function closeSidebar() {
                 </div>
                 
                 <script>
-                    const jadwalAlamin = {
-                        0: [ // Ahad
-                            "Kajian Ba'da Subuh<br>At-Tamassuku Bisunnati Fil Aqooidi Wal Ahkam<br>Ustadz Muhammad Arief – hafidzahullah",
-                            "Kajian Ba'da Maghrib<br>Ighatsatul Lahfan Fil Mashaidisy Syaithon<br>Ustadz Abu Fairuz Ahmad Ridwan, Lc., MA – hafidzahullah"
-                        ],
-                        1: [ // Senin
-                            "Kajian Ba'da Subuh<br>Belum tersedia",
-                            "Kajian Ba'da Maghrib<br>Al Mulakhos Fiqih<br>Ustadz Ferry Anshar, B.A – hafidzahullah"
-                        ],
-                        2: [ // Selasa
-                            "Kajian Ba'da Subuh<br>Belum tersedia",
-                            "Kajian Ba'da Maghrib<br>Fiqih Asmaa Al Husna<br>Ustadz Ahmad Wahib, M.A – hafidzahullah"
-                        ],
-                        3: [ // Rabu
-                            "Kajian Ba'da Subuh<br>Belum tersedia",
-                            "Kajian Ba'da Maghrib<br>Al Ushul Min Ilmil Ushul<br>Ustadz Sajjad Khalifa, LC – hafidzahullah"
-                        ],
-                        4: [ // Kamis
-                            "Kajian Ba'da Subuh<br>Belum tersedia",
-                            "Kajian Ba'da Maghrib<br>Syarah Ushul Iman<br>Ustadz Rahmat Nur Hidayat – hafidzahullah"
-                        ],
-                        5: [ // Jumat
-                            "Kajian Ba'da Subuh<br>Belum tersedia",
-                            "Kajian Ba'da Maghrib<br>Al Ikhlaash Thariiq Al Khoolash<br>Ustadz Wildan Siregar, S.Kom.I – hafidzahullah"
-                        ],
-                        6: [ // Sabtu
-                            "Kajian Ba'da Subuh<br>Belum tersedia",
-                            "Kajian Ba'da Maghrib<br>Mukhtasar Ahadist Shiyam<br>Ustadz Sudirman Abu Nida – hafidzahullah"
-                        ]
-                    };
-                
-                    document.addEventListener('DOMContentLoaded', function() {
-                        try {
-                            const hariIni = new Date().getDay();
-                            const elemenAlamin = document.getElementById("deskripsi-kajian-alamin");
-                            
-                            if (elemenAlamin) {
-                                if (jadwalAlamin[hariIni]) {
-                                    elemenAlamin.innerHTML = jadwalAlamin[hariIni].join("<br><br>");
-                                } else {
-                                    elemenAlamin.innerHTML = "Jadwal kajian hari ini belum tersedia";
-                                }
-                            }
-                        } catch (error) {
-                            console.error("Error:", error);
-                            document.getElementById("deskripsi-kajian-alamin").innerHTML = 
-                                "Gagal memuat jadwal. Silakan coba lagi nanti.";
-                        }
-                    });
-                
-                    function toggleJadwalAlamin() {
-                        const deskripsiElemen = document.getElementById("deskripsi-kajian-alamin");
-                        const tombol = document.getElementById("tombol-jadwal-alamin");
-                        
-                        if (deskripsiElemen.style.display === "none") {
-                            deskripsiElemen.style.display = "block";
-                            tombol.textContent = "Sembunyikan Jadwal";
-                        } else {
-                            deskripsiElemen.style.display = "none";
-                            tombol.textContent = "Lihat Jadwal";
-                        }
-                    }
-                </script>
+    const jadwalAlamin = {
+        0: [ // AHAD
+            "Ba’da Shubuh – Selesai<br>Al Fatwaas Bisunnati Fil Ahkaam<br>Ustadz Muhammad Arief Naufal, Lc.",
+            "Ba’da Maghrib – Selesai<br>Ighatsatul Lahfan Fii Mashadiidis Syaithan<br>Ustadz Abu Fairuz, Lc., M.A."
+        ],
+        1: [ // SENIN
+            "Ba’da Maghrib – Selesai<br>Al-Mulakhos Fiqih<br>Ustadz Ferri Anshar, BA."
+        ],
+        2: [ // SELASA
+            "Ba’da Maghrib – Selesai<br>Aunur Rohman Fii Tafsiril Qur’an<br>Ustadz Ahmad Wahib, M.A.",
+            "Ba’da Isya’ – Selesai<br>Tahfidz – Juz 30"
+        ],
+        3: [ // RABU
+            "Ba’da Maghrib – Selesai<br>Al Ushul Min ‘Ilmil Ushul<br>Ustadz Said Khalifa, L.C."
+        ],
+        4: [ // KAMIS
+            "Ba’da Maghrib – Selesai<br>Al-Mukhtashar Fii Al-Aqidah<br>Ustadz Rahmat Nur Hidayat",
+            "Ba’da Isya’ – Selesai<br>Tahfidz – Juz 30"
+        ],
+        5: [ // JUMAT
+            "Ba’da Isya’ – Selesai<br>Riyadhus Sholihin<br>Ustadz Wildan Siregar, S.Kom.I., M.A."
+        ],
+        6: [ // SABTU
+            "Ba’da Maghrib – Selesai<br>Min Akhlaqil Rosulil Kariim<br>Ustadz Sudirman Abu Nida",
+            "Ba’da Isya’ – Selesai<br>Tahsin – Iqra’"
+        ]
+    };
+
+    document.addEventListener('DOMContentLoaded', function() {
+        try {
+            const hariIni = new Date().getDay();
+            const elemenAlamin = document.getElementById("deskripsi-kajian-alamin");
+
+            if (elemenAlamin) {
+                if (jadwalAlamin[hariIni]) {
+                    elemenAlamin.innerHTML = jadwalAlamin[hariIni].join("<br><br>");
+                } else {
+                    elemenAlamin.innerHTML = "Jadwal kajian hari ini belum tersedia";
+                }
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            document.getElementById("deskripsi-kajian-alamin").innerHTML =
+                "Gagal memuat jadwal. Silakan coba lagi nanti.";
+        }
+    });
+
+    function toggleJadwalAlamin() {
+        const deskripsiElemen = document.getElementById("deskripsi-kajian-alamin");
+        const tombol = document.getElementById("tombol-jadwal-alamin");
+
+        if (deskripsiElemen.style.display === "none") {
+            deskripsiElemen.style.display = "block";
+            tombol.textContent = "Sembunyikan Jadwal";
+        } else {
+            deskripsiElemen.style.display = "none";
+            tombol.textContent = "Lihat Jadwal";
+        }
+    }
+</script>
+
 
                   <div class="btn-left">
                     <a href="https://www.facebook.com/FP.Alamin.SeiBeduk" target="_blank" class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
@@ -1048,7 +1081,7 @@ function closeSidebar() {
                         "Kajian Ba'da Maghrib<br>Manhaj Kitab At Tamassuk Bis Sunnah<br>Ustadz Muhammad Arif – hafidzahullah"
                       ],
                       3: [
-                        "Kajian Ba'da Maghrib<br>Tafsir Al Qur'an<br>Ustadz Abu Humairah (Ajat) – hafidzahullah"
+                        " - "
                       ],
                       4: [
                         "Kajian Ba'da Maghrib<br>Fiqh Hadits Kitab Umdatul Ahkam<br>Ustadz Bukhari Ibrahim, Lc – hafidzahullah"
@@ -1579,79 +1612,65 @@ function closeSidebar() {
               </div>
 
           <script>
-              const jadwalJabalRahmah = {
-                  0: [ // Ahad
-                      "Kajian Ba'da Subuh<br>Kitab Asyroothus Saa'ah<br>Ustadz Abu Nida, S.Pd.I – hafidzahullah",
-                      "Kajian Ba'da Maghrib<br>Kitab Umdatul Ahkam<br>Ustadz Abu Ahmad – hafidzahullah"
-                  ],
-                  1: [ // Senin
-                      "Kajian Ba'da Subuh<br>Belum tersedia",
-                      "Kajian Ba'da Maghrib<br>Tahsin Al Qur'an (Kitab Riyadhoh Imriin Bi Fakkihi)<br>Ustadz Abu Fawwaz – hafidzahullah"
-                  ],
-                  2: [ // Selasa
-                      "Kajian Ba'da Subuh<br>Belum tersedia",
-                      "Kajian Ba'da Maghrib<br>Mengenal Sosok Perilaku Nabi ﷺ<br>Ustadz Firdaus, Lc., S.Pd.I – hafidzahullah"
-                  ],
-                  3: [ // Rabu
-                      "Kajian Ba'da Subuh<br>Belum tersedia",
-                      "Kajian Ba'da Maghrib<br>Penjelasan Tentang Pohon Iman<br>Ustadz Rahmat Nur Hidayat – hafidzahullah"
-                  ],
-                  4: [ // Kamis
-                      "Kajian Ba'da Subuh<br>Belum tersedia",
-                      "Kajian Ba'da Maghrib<br>Kaidah Penting Dalam Ibadah<br>Ustadz Abu Nida, S.Pd.I – hafidzahullah"
-                  ],
-                  5: [ // Jumat
-                      function() {
-                          const date = new Date();
-                          const weekOfMonth = Math.ceil(date.getDate() / 7);
-                          
-                          let asharSession = "Kajian Ba'da Ashar<br>Kajian Ummahat<br>";
-                          if(weekOfMonth <= 2) {
-                              asharSession += "Ustadz Abu Ahmad – hafidzahullah";
-                          } else {
-                              asharSession += "Ustadz Abu Nida, S.Pd.I – hafidzahullah";
-                          }
-                          
-                          return [
-                              asharSession,
-                              "Kajian Ba'da Maghrib<br>Kajian Kitab Fiqih Asmaul Husna<br>Ustadz Ahmad Wahb, M.A – hafidzahullah"
-                          ];
-                      }
-                  ],
-                  6: [ // Sabtu
-                      "Kajian Ba'da Subuh<br>Kitab Iklash<br>Ustadz Rahmat Nur Hidayat – hafidzahullah",
-                      "Kajian Ba'da Maghrib<br>Tafsir Al Qur'an<br>Ustadz Ferry Anshar, B.A – hafidzahullah"
-                  ]
-              };
+    const jadwalMJR = {
+        0: [ // Ahad
+            "Ba’da Shubuh<br>Kitab Syarah Al-Kabair<br>Ustadz Abu Nida, S.Pd.I, حفظه الله",
+            "Ba’da Maghrib<br>Kitab Syarah Riyadhus Shalihin<br>Ustadz Abu Ahmad Supandi, Lc., M.A, حفظه الله"
+        ],
+        1: [ // Senin
+            "Ba’da Maghrib<br>Tahsin Al-Qur’an Karim<br>Ustadz Abu Fawwaz حفظه الله"
+        ],
+        2: [ // Selasa
+            "Ba’da Maghrib<br>Kitab Al Wajiz Fii Fiqhisunnah Wal Kitabil Aziz<br>Ustadz Muhammad Thoha, Lc. حفظه الله"
+        ],
+        3: [ // Rabu
+            "Ba’da Maghrib<br>Kitab Qowa’idul Ushuliyyah Al Fiqhiyyah<br>Ustadz Rahmat Nur Hidayat حفظه الله"
+        ],
+        4: [ // Kamis
+            "Ba’da Maghrib<br>Kitab Al Ishbah Fii Bayan Manhaj Salafi Fii Tarbiyah Wal Ishlah<br>Ustadz Abu Nida, S.Pd.I, حفظه الله"
+        ],
+        5: [ // Jumat
+            "Ba’da Ashar<br>Kajian Ummahat<br>(Pemateri tidak tercantum)",
+            "Ba’da Maghrib<br>Kitab Suwar Min Hayatih Shahabah<br>Ustadz Ahmad Wahib, M.A. حفظه الله"
+        ],
+        6: function() { // Sabtu (ada jadwal pekanan)
+            const tanggal = new Date().getDate();
+            const pekan = Math.ceil(tanggal / 7);
+
+            let jadwal = [
+                "Ba’da Shubuh<br>Kitab Ghaflah<br>Ustadz Rahmat Nur Hidayat حفظه الله",
+                "Ba’da Maghrib<br>Tahsin Al-Qur’an<br>Ustadz Fenny Asri, B.A حفظه الله"
+            ];
+
+            if (pekan >= 2 && pekan <= 4) {
+                jadwal.push(
+                    "Pekan 2–4<br>Ahadits Ishlahil Qulub<br>Ustadz Abu Fairuz, M.A حفظه الله"
+                );
+            }
+
+            return jadwal;
+        }
+    };
 
     document.addEventListener('DOMContentLoaded', function() {
-        try {
-            const hariIni = new Date().getDay();
-            const elemenJabalRahmah = document.getElementById("deskripsi-kajian-jabalrahmah");
-            
-            if (elemenJabalRahmah) {
-                let jadwalHariIni;
-                
-                // Handle special case for Jumat (dynamic content)
-                if (hariIni === 5 && typeof jadwalJabalRahmah[hariIni][0] === 'function') {
-                    jadwalHariIni = jadwalJabalRahmah[hariIni][0]();
-                } else {
-                    jadwalHariIni = jadwalJabalRahmah[hariIni] || ["Jadwal belum tersedia"];
-                }
-                
-                elemenJabalRahmah.innerHTML = jadwalHariIni.join("<br><br>");
-            }
-        } catch (error) {
-            console.error("Error:", error);
-            document.getElementById("deskripsi-kajian-jabalrahmah").innerHTML = 
-                "Gagal memuat jadwal. Silakan coba lagi nanti.";
+        const hari = new Date().getDay();
+        const elemen = document.getElementById("deskripsi-kajian-jabalrahmah");
+
+        let jadwalHari;
+
+        if (hari === 6 && typeof jadwalMJR[6] === "function") {
+            jadwalHari = jadwalMJR[6]();
+        } else {
+            jadwalHari = jadwalMJR[hari] || ["Jadwal belum tersedia"];
         }
+
+        elemen.innerHTML = jadwalHari.join("<br><br>");
     });
 
     function toggleJadwalJabalRahmah() {
         const deskripsiElemen = document.getElementById("deskripsi-kajian-jabalrahmah");
         const tombol = document.getElementById("tombol-jadwal-jabalrahmah");
-        
+
         if (deskripsiElemen.style.display === "none") {
             deskripsiElemen.style.display = "block";
             tombol.textContent = "Sembunyikan Jadwal";
@@ -1660,7 +1679,8 @@ function closeSidebar() {
             tombol.textContent = "Lihat Jadwal";
         }
     }
-          </script>
+</script>
+
 
                       <div class="btn-left">
                         <a href="https://www.facebook.com/masjidjabalrahmah.batam.9" target="_blank" class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">
@@ -2062,7 +2082,7 @@ function closeSidebar() {
         <use xlink:href="#calendar"></use>
       </svg>
       <h4 style="cursor:pointer; color:#000000;"
-          onclick="showImagePopup(event, 'images/jadwal-hang.PNG')">
+          onclick="showImagePopup(event, 'images/jadwal-hang.jpg')">
         Masjid Hang
       </h4>
       <p>Klik untuk lihat jadwal lengkap kajian.</p>
@@ -2111,7 +2131,7 @@ function closeSidebar() {
         <use xlink:href="#calendar"></use>
       </svg>
       <h4 style="cursor:pointer; color:#000000;"
-          onclick="showImagePopup(event, 'images/jadwal-aalamin.jpg')">
+          onclick="showImagePopup(event, 'images/jadwal-aalamin.png')">
         Masjid Al Amin
       </h4>
       <p>Klik untuk lihat jadwal lengkap kajian.</p>
@@ -2128,7 +2148,7 @@ function closeSidebar() {
         <use xlink:href="#calendar"></use>
       </svg>
       <h4 style="cursor:pointer; color:#000000;"
-          onclick="showImagePopup(event, 'images/jadwal-mjr.jpg')">
+          onclick="showImagePopup(event, 'images/jadwal-mjr.jpeg')">
         Masjid Jabal Rahmah
       </h4>
       <p>Klik untuk lihat jadwal lengkap kajian.</p>
